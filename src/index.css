@@ -1,0 +1,563 @@
+@import "tailwindcss";
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  }
+
+  h1, h2, h3, .font-cartoon, .font-heading {
+    font-family: 'Baloo 2', 'Fredoka', cursive, sans-serif;
+  }
+}
+
+:root {
+  --color-warm-cream: #FFF9F0;
+  --color-chocolate: #49200B;
+  --color-warm-orange: #FF9F00;
+  --color-golden-yellow: #FFD36A;
+  --color-muted-brown: #79513B;
+  --color-soft-peach: #F7D9C7;
+  --color-pale-mint: #C6EAD7;
+}
+
+@keyframes floatSlow {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-8px) rotate(2deg);
+  }
+}
+
+@keyframes wagSlow {
+  0%, 100% {
+    transform: rotate(0deg);
+  }
+  25% {
+    transform: rotate(-10deg);
+  }
+  75% {
+    transform: rotate(10deg);
+  }
+}
+
+@keyframes popIn {
+  0% {
+    transform: scale(0.85);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.animate-float {
+  animation: floatSlow 4s ease-in-out infinite;
+}
+
+.animate-wag {
+  animation: wagSlow 1.5s ease-in-out infinite;
+  transform-origin: bottom center;
+}
+
+@keyframes tailWagFast {
+  0%, 100% {
+    transform: rotate(0deg);
+  }
+  25% {
+    transform: rotate(-22deg);
+  }
+  75% {
+    transform: rotate(22deg);
+  }
+}
+
+@keyframes tailWagNormal {
+  0%, 100% {
+    transform: rotate(0deg);
+  }
+  25% {
+    transform: rotate(-12deg);
+  }
+  75% {
+    transform: rotate(12deg);
+  }
+}
+
+@keyframes spinSlow {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes spinReverse {
+  from {
+    transform: rotate(360deg);
+  }
+  to {
+    transform: rotate(0deg);
+  }
+}
+
+.animate-tail-fast {
+  animation: tailWagFast 0.35s ease-in-out infinite;
+}
+
+.animate-tail {
+  animation: tailWagNormal 0.8s ease-in-out infinite;
+}
+
+.animate-spin-slow {
+  animation: spinSlow 8s linear infinite;
+}
+
+.animate-spin-reverse {
+  animation: spinReverse 6s linear infinite;
+}
+
+/* Playful illustration card styling inspired by Hachikohood - warm, rounded, subtle offset shadow */
+.cartoon-card {
+  border: 2px solid #49200B;
+  box-shadow: 3px 3px 0px #49200B;
+  transition: transform 0.18s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.18s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.cartoon-card:hover {
+  transform: translate(-1.5px, -2px);
+  box-shadow: 4px 5px 0px #49200B;
+}
+
+.cartoon-btn {
+  border: 2px solid #49200B;
+  box-shadow: 3px 3px 0px #49200B;
+  transition: all 0.12s ease-in-out;
+}
+
+.cartoon-btn:hover {
+  transform: translate(-1px, -1.5px);
+  box-shadow: 4px 4px 0px #49200B;
+}
+
+.cartoon-btn:active {
+  transform: translate(2px, 2px);
+  box-shadow: 1px 1px 0px #49200B;
+}
+
+/* Continuous Marquee Animations */
+@keyframes marqueeRTL {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+  100% {
+    transform: translate3d(-50%, 0, 0);
+  }
+}
+
+@keyframes marqueeLTR {
+  0% {
+    transform: translate3d(-50%, 0, 0);
+  }
+  100% {
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+.animate-marquee-rtl {
+  display: flex;
+  width: max-content;
+  animation: marqueeRTL 28s linear infinite;
+  will-change: transform;
+}
+
+.animate-marquee-rtl:hover {
+  animation-play-state: paused;
+}
+
+.animate-marquee-ltr {
+  display: flex;
+  width: max-content;
+  animation: marqueeLTR 32s linear infinite;
+  will-change: transform;
+}
+
+.animate-marquee-ltr:hover {
+  animation-play-state: paused;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-marquee-rtl,
+  .animate-marquee-ltr {
+    animation: none;
+    transform: none;
+  }
+}
+
+/* Walking background parallax */
+@keyframes walkBackground {
+  0% {
+    background-position: 0% 0%;
+  }
+  100% {
+    background-position: -400px 0%;
+  }
+}
+
+.animate-walk-bg {
+  animation: walkBackground 8s linear infinite;
+}
+
+/* Indian Railway Express Train Movement & Suspension Sway */
+@keyframes indianTrainLoop {
+  0% {
+    transform: translate3d(-100%, 0, 0);
+  }
+  100% {
+    transform: translate3d(calc(100% + 100vw + 100px), 0, 0);
+  }
+}
+
+@keyframes railSway {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  25% {
+    transform: translateY(-1.2px);
+  }
+  50% {
+    transform: translateY(0.6px);
+  }
+  75% {
+    transform: translateY(-0.8px);
+  }
+}
+
+.animate-indian-train-loop {
+  animation: indianTrainLoop 18s cubic-bezier(0.2, 0.85, 0.4, 1) infinite;
+  will-change: transform;
+}
+
+.animate-rail-sway {
+  animation: railSway 0.65s ease-in-out infinite;
+  will-change: transform;
+}
+
+/* ============================================================ */
+/* CARTOON ANIMATION STUDIO KEYFRAMES & UTILITIES               */
+/* ============================================================ */
+
+/* CuteDODO Galloping Run Cycle */
+@keyframes dogGallopMotion {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  25% {
+    transform: translateY(-6px) rotate(-3deg);
+  }
+  50% {
+    transform: translateY(1px) rotate(1deg);
+  }
+  75% {
+    transform: translateY(-4px) rotate(2deg);
+  }
+}
+
+.animate-dog-gallop {
+  animation: dogGallopMotion 0.45s cubic-bezier(0.45, 0.05, 0.55, 0.95) infinite;
+  will-change: transform;
+}
+
+/* CuteDODO Head Bob & Ear Bounce */
+@keyframes dogEarBounce {
+  0%, 100% {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(14deg);
+  }
+}
+
+.animate-ear-bounce {
+  animation: dogEarBounce 0.4s ease-in-out infinite;
+  transform-origin: top center;
+}
+
+/* Belly-up Joyful Wiggle */
+@keyframes dogBellyWiggle {
+  0%, 100% {
+    transform: rotate(-4deg) translateY(0px);
+  }
+  50% {
+    transform: rotate(4deg) translateY(-3px);
+  }
+}
+
+.animate-belly-wiggle {
+  animation: dogBellyWiggle 0.6s ease-in-out infinite;
+  transform-origin: center center;
+}
+
+/* Frisbee & Ball Smooth Fly */
+@keyframes frisbeeTrajectory {
+  0% {
+    transform: translate(0px, 0px) rotate(0deg) scale(0.9);
+  }
+  50% {
+    transform: translate(240px, -70px) rotate(360deg) scale(1.05);
+  }
+  100% {
+    transform: translate(460px, 10px) rotate(720deg) scale(1);
+  }
+}
+
+.animate-frisbee-fly {
+  animation: frisbeeTrajectory 1.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) infinite;
+  will-change: transform;
+}
+
+/* Butterfly Flutter */
+@keyframes butterflyPath {
+  0%, 100% {
+    transform: translate(0px, 0px) scaleX(1);
+  }
+  25% {
+    transform: translate(15px, -18px) scaleX(0.85);
+  }
+  50% {
+    transform: translate(32px, -8px) scaleX(1);
+  }
+  75% {
+    transform: translate(16px, 12px) scaleX(0.9);
+  }
+}
+
+.animate-butterfly {
+  animation: butterflyPath 3.2s ease-in-out infinite;
+}
+
+@keyframes wingFlap {
+  0%, 100% {
+    transform: scaleX(1);
+  }
+  50% {
+    transform: scaleX(0.2);
+  }
+}
+
+.animate-wing-flap {
+  animation: wingFlap 0.16s ease-in-out infinite;
+  transform-origin: center center;
+}
+
+/* Garden Flower Sway in Warm Breeze */
+@keyframes flowerSwayWind {
+  0%, 100% {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(7deg);
+  }
+}
+
+.animate-flower-sway {
+  animation: flowerSwayWind 2.4s ease-in-out infinite;
+  transform-origin: bottom center;
+}
+
+/* Floating Soap Bubble Wobble */
+@keyframes bubbleFloatWobble {
+  0%, 100% {
+    transform: translateY(0px) translateX(0px) scale(1);
+  }
+  33% {
+    transform: translateY(-12px) translateX(6px) scale(1.04, 0.96);
+  }
+  66% {
+    transform: translateY(-22px) translateX(-4px) scale(0.97, 1.03);
+  }
+}
+
+.animate-bubble-float {
+  animation: bubbleFloatWobble 4s ease-in-out infinite;
+}
+
+/* Smiling Sun Rays Spin */
+@keyframes sunSpinSlow {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.animate-sun-spin {
+  animation: sunSpinSlow 24s linear infinite;
+  transform-origin: center center;
+}
+
+/* Cartoon Pop Badge Jiggle */
+@keyframes cartoonJiggle {
+  0%, 100% {
+    transform: rotate(0deg) scale(1);
+  }
+  25% {
+    transform: rotate(-3deg) scale(1.03);
+  }
+  75% {
+    transform: rotate(3deg) scale(1.03);
+  }
+}
+
+.animate-cartoon-jiggle:hover {
+  animation: cartoonJiggle 0.4s ease-in-out infinite;
+}
+
+/* Mobile viewport overflow protection */
+html, body {
+  overflow-x: hidden;
+  max-width: 100vw;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-indian-train-loop,
+  .animate-rail-sway,
+  .animate-dog-gallop,
+  .animate-ear-bounce,
+  .animate-belly-wiggle,
+  .animate-frisbee-fly,
+  .animate-butterfly,
+  .animate-wing-flap,
+  .animate-flower-sway,
+  .animate-bubble-float,
+  .animate-sun-spin {
+    animation: none !important;
+    transform: none !important;
+  }
+}
+
+/* Custom whimsical scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: #FFF8E7;
+}
+::-webkit-scrollbar-thumb {
+  background: #F59E0B;
+  border-radius: 9999px;
+  border: 2px solid #FFF8E7;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #D97706;
+}
+
+/* ============================================================ */
+/* FOOTER WALKING SHIH TZU DOG ANIMATIONS                       */
+/* ============================================================ */
+@keyframes footerDogWalkStride {
+  0% {
+    transform: translate3d(-140px, 0, 0);
+  }
+  100% {
+    transform: translate3d(calc(100vw + 90px), 0, 0);
+  }
+}
+
+@keyframes legStrideFrontLeft {
+  0%, 100% {
+    transform: rotate(22deg);
+  }
+  50% {
+    transform: rotate(-22deg);
+  }
+}
+
+@keyframes legStrideFrontRight {
+  0%, 100% {
+    transform: rotate(-22deg);
+  }
+  50% {
+    transform: rotate(22deg);
+  }
+}
+
+@keyframes legStrideBackLeft {
+  0%, 100% {
+    transform: rotate(-20deg);
+  }
+  50% {
+    transform: rotate(20deg);
+  }
+}
+
+@keyframes legStrideBackRight {
+  0%, 100% {
+    transform: rotate(20deg);
+  }
+  50% {
+    transform: rotate(-20deg);
+  }
+}
+
+@keyframes dogBodyTrotMotion {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  25% {
+    transform: translateY(-3.5px) rotate(-1deg);
+  }
+  50% {
+    transform: translateY(0.5px) rotate(0.5deg);
+  }
+  75% {
+    transform: translateY(-2px) rotate(1deg);
+  }
+}
+
+@keyframes dogTailCurlWagMotion {
+  0%, 100% {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(14deg);
+  }
+}
+
+.animate-footer-dog-walk {
+  animation: footerDogWalkStride 18s linear infinite;
+  will-change: transform;
+}
+
+.animate-dog-leg-fl {
+  animation: legStrideFrontLeft 0.55s ease-in-out infinite;
+  transform-origin: 65px 44px;
+}
+
+.animate-dog-leg-fr {
+  animation: legStrideFrontRight 0.55s ease-in-out infinite;
+  transform-origin: 62px 44px;
+}
+
+.animate-dog-leg-bl {
+  animation: legStrideBackLeft 0.55s ease-in-out infinite;
+  transform-origin: 24px 46px;
+}
+
+.animate-dog-leg-br {
+  animation: legStrideBackRight 0.55s ease-in-out infinite;
+  transform-origin: 34px 46px;
+}
+
+.animate-dog-trot-body {
+  animation: dogBodyTrotMotion 0.55s cubic-bezier(0.45, 0.05, 0.55, 0.95) infinite;
+}
+
+.animate-dog-tail-curl {
+  animation: dogTailCurlWagMotion 0.55s ease-in-out infinite;
+  transform-origin: 24px 28px;
+}

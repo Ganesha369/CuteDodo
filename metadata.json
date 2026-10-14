@@ -1,0 +1,8 @@
+{
+  "name": "CuteDoDo ($DODO) - The Most Wholesome Meme Token on Solana",
+  "description": "Inspired by CuteDODO from Chennai. 1% for pet shelters, 0% marketing tax, public family wallets, saving strays one block at a time.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
