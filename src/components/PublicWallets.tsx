@@ -196,13 +196,14 @@ export const PublicWallets: React.FC = () => {
 
         {/* Wallets Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 sm:gap-4 mb-12">
-          {filteredWallets.map((w) => {
+          {filteredWallets.map((w, idx) => {
             const isCopied = copiedId === w.id;
+            const cardBg = idx === 0 ? 'bg-[#f9dcb7]' : idx === 1 ? 'bg-[#c2f8d1]' : 'bg-[#FFF9F0]';
 
             return (
               <div
                 key={w.id}
-                className="cartoon-card bg-[#FFF9F0] rounded-2xl p-3 sm:p-3.5 flex flex-col justify-between"
+                className={`cartoon-card ${cardBg} rounded-2xl p-3 sm:p-3.5 flex flex-col justify-between`}
               >
                 <div>
                   <div className="flex items-start justify-between gap-1.5 mb-1.5">

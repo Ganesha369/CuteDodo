@@ -81,46 +81,59 @@ export const Roadmap: React.FC = () => {
 
         {/* 4 Phases Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-          {phases.map((ph) => (
-            <div
-              key={ph.phaseNumber}
-              className="cartoon-card bg-[#FFF9F0] rounded-3xl p-6 flex flex-col justify-between"
-            >
-              <div>
-                <div className="flex items-center justify-between mb-4">
-                  <span className="text-xs font-mono font-bold text-[#79513B]">
-                    {ph.phaseNumber}
-                  </span>
-                  <span className={`text-xs font-bold font-heading px-2.5 py-0.5 rounded-lg border border-[#49200B] shadow-[1px_1px_0px_#49200B] ${ph.badgeColor}`}>
-                    {ph.badge}
-                  </span>
+          {phases.map((ph, phIdx) => {
+            const phaseBgs = ['bg-[#f0c8ed]', 'bg-[#f6dfb9]', 'bg-[#bef0c4]', 'bg-[#96ece5]'];
+            const cardBg = phaseBgs[phIdx] || 'bg-[#FFF9F0]';
+
+            return (
+              <div
+                key={ph.phaseNumber}
+                className={`cartoon-card ${cardBg} rounded-3xl p-6 flex flex-col justify-between`}
+              >
+                <div>
+                  <div className="flex items-center justify-between mb-4">
+                    <span className="text-xs font-mono font-bold text-[#79513B]">
+                      {ph.phaseNumber}
+                    </span>
+                    <span className={`text-xs font-bold font-heading px-2.5 py-0.5 rounded-lg border border-[#49200B] shadow-[1px_1px_0px_#49200B] ${ph.badgeColor}`}>
+                      {ph.badge}
+                    </span>
+                  </div>
+
+                  <h3 className="text-2xl font-bold font-heading text-[#49200B] mb-4">
+                    {ph.title}
+                  </h3>
+
+                  <ul className="space-y-3">
+                    {ph.items.map((item, itemIdx) => {
+                      const isPhase4Item2 = phIdx === 3 && itemIdx === 1;
+
+                      return (
+                        <li
+                          key={itemIdx}
+                          className={`flex items-start gap-2.5 text-xs sm:text-sm text-[#79513B] font-medium ${
+                            isPhase4Item2 ? 'bg-[#c7b6b6] p-1.5 rounded-xl border border-[#49200B]/20' : ''
+                          }`}
+                        >
+                          <div className="w-5 h-5 rounded-lg bg-white border border-[#49200B]/30 flex items-center justify-center shrink-0 mt-0.5 text-[#FF9F00]">
+                            🐾
+                          </div>
+                          <span className={`leading-snug ${isPhase4Item2 ? 'bg-[#e5dae5] px-1.5 py-0.5 rounded-md text-[#49200B] font-bold' : ''}`}>
+                            {item}
+                          </span>
+                        </li>
+                      );
+                    })}
+                  </ul>
                 </div>
 
-                <h3 className="text-2xl font-bold font-heading text-[#49200B] mb-4">
-                  {ph.title}
-                </h3>
-
-                <ul className="space-y-3">
-                  {ph.items.map((item, itemIdx) => (
-                    <li
-                      key={itemIdx}
-                      className="flex items-start gap-2.5 text-xs sm:text-sm text-[#79513B] font-medium"
-                    >
-                      <div className="w-5 h-5 rounded-lg bg-white border border-[#49200B]/30 flex items-center justify-center shrink-0 mt-0.5 text-[#FF9F00]">
-                        🐾
-                      </div>
-                      <span className="leading-snug">{item}</span>
-                    </li>
-                  ))}
-                </ul>
+                <div className="mt-6 pt-4 border-t border-[#49200B]/15 text-[11px] font-semibold text-[#79513B] flex items-center gap-1.5">
+                  <Clock className="w-3.5 h-3.5 text-[#FF9F00]" />
+                  <span>Phase Status: {ph.badge}</span>
+                </div>
               </div>
-
-              <div className="mt-6 pt-4 border-t border-[#49200B]/15 text-[11px] font-semibold text-[#79513B] flex items-center gap-1.5">
-                <Clock className="w-3.5 h-3.5 text-[#FF9F00]" />
-                <span>Phase Status: {ph.badge}</span>
-              </div>
-            </div>
-          ))}
+            );
+          })}
         </div>
 
       </div>

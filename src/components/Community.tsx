@@ -58,7 +58,7 @@ export const Community: React.FC = () => {
             target="_blank"
             rel="noreferrer"
             onClick={() => sounds.pop()}
-            className="cartoon-card bg-[#FFF9F0] rounded-3xl p-6 text-center group hover:bg-[#C6EAD7]/30 transition-all flex flex-col items-center justify-between"
+            className="cartoon-card bg-[#c6f7f7] rounded-3xl p-6 text-center group hover:opacity-95 transition-all flex flex-col items-center justify-between"
           >
             <div>
               <div className="w-16 h-16 rounded-3xl bg-[#C6EAD7] border-2 border-[#49200B] flex items-center justify-center text-3xl mb-4 mx-auto shadow-[3px_3px_0px_#49200B] group-hover:scale-105 transition-transform">
@@ -85,7 +85,7 @@ export const Community: React.FC = () => {
             target="_blank"
             rel="noreferrer"
             onClick={() => sounds.pop()}
-            className="cartoon-card bg-[#FFF9F0] rounded-3xl p-6 text-center group hover:bg-[#FFD36A]/30 transition-all flex flex-col items-center justify-between"
+            className="cartoon-card bg-[#f5d9d5] rounded-3xl p-6 text-center group hover:opacity-95 transition-all flex flex-col items-center justify-between"
           >
             <div>
               <div className="w-16 h-16 rounded-3xl bg-[#FFD36A] border-2 border-[#49200B] flex items-center justify-center text-3xl mb-4 mx-auto shadow-[3px_3px_0px_#49200B] group-hover:scale-105 transition-transform">
@@ -112,7 +112,7 @@ export const Community: React.FC = () => {
             target="_blank"
             rel="noreferrer"
             onClick={() => sounds.pop()}
-            className="cartoon-card bg-[#FFF9F0] rounded-3xl p-6 text-center group hover:bg-[#F7D9C7]/40 transition-all flex flex-col items-center justify-between"
+            className="cartoon-card bg-[#d4d5eb] rounded-3xl p-6 text-center group hover:opacity-95 transition-all flex flex-col items-center justify-between"
           >
             <div>
               <div className="w-16 h-16 rounded-3xl bg-[#F7D9C7] border-2 border-[#49200B] flex items-center justify-center text-3xl mb-4 mx-auto shadow-[3px_3px_0px_#49200B] group-hover:scale-105 transition-transform">
@@ -160,39 +160,45 @@ export const Community: React.FC = () => {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-            {posts.map((post) => (
-              <div
-                key={post.id}
-                className="bg-white border-2 border-[#49200B] rounded-2xl p-4 shadow-[2px_2px_0px_#49200B] flex flex-col justify-between"
-              >
-                <div>
-                  <div className="flex items-center gap-2 mb-2">
-                    <div className="w-8 h-8 rounded-full bg-[#FFD36A] border border-[#49200B] flex items-center justify-center text-sm font-bold">
-                      🐶
-                    </div>
-                    <div>
-                      <div className="text-xs font-bold font-heading text-[#49200B]">{post.author}</div>
-                      <div className="text-[11px] text-[#79513B] font-medium">{post.handle} · {post.time}</div>
-                    </div>
-                  </div>
-                  <p className="text-xs sm:text-sm text-[#49200B] font-medium leading-relaxed mb-4">
-                    {post.content}
-                  </p>
-                </div>
+            {posts.map((post, idx) => {
+              const postBgs = ['bg-[#f7ecde]', 'bg-[#f1f8fc]', 'bg-[#e0f4dd]'];
+              const postBg = postBgs[idx] || 'bg-white';
+              const avatarBg = idx === 0 ? 'bg-[#e5e5e5]' : 'bg-[#FFD36A]';
 
-                <div className="flex items-center justify-between pt-2 border-t border-[#49200B]/15 text-xs font-semibold text-[#79513B]">
-                  <span className="flex items-center gap-1 text-[#FF9F00]">
-                    <Heart className="w-3.5 h-3.5 fill-[#FF9F00]" /> {post.likes}
-                  </span>
-                  <span className="flex items-center gap-1 text-emerald-800">
-                    <Repeat className="w-3.5 h-3.5" /> {post.retweets}
-                  </span>
-                  <span className="flex items-center gap-1 text-[#79513B]">
-                    <Share2 className="w-3.5 h-3.5" /> Share
-                  </span>
+              return (
+                <div
+                  key={post.id}
+                  className={`${postBg} border-2 border-[#49200B] rounded-2xl p-4 shadow-[2px_2px_0px_#49200B] flex flex-col justify-between`}
+                >
+                  <div>
+                    <div className="flex items-center gap-2 mb-2">
+                      <div className={`w-8 h-8 rounded-full ${avatarBg} border border-[#49200B] flex items-center justify-center text-sm font-bold`}>
+                        🐶
+                      </div>
+                      <div>
+                        <div className="text-xs font-bold font-heading text-[#49200B]">{post.author}</div>
+                        <div className="text-[11px] text-[#79513B] font-medium">{post.handle} · {post.time}</div>
+                      </div>
+                    </div>
+                    <p className="text-xs sm:text-sm text-[#49200B] font-medium leading-relaxed mb-4">
+                      {post.content}
+                    </p>
+                  </div>
+
+                  <div className="flex items-center justify-between pt-2 border-t border-[#49200B]/15 text-xs font-semibold text-[#79513B]">
+                    <span className="flex items-center gap-1 text-[#FF9F00]">
+                      <Heart className="w-3.5 h-3.5 fill-[#FF9F00]" /> {post.likes}
+                    </span>
+                    <span className="flex items-center gap-1 text-emerald-800">
+                      <Repeat className="w-3.5 h-3.5" /> {post.retweets}
+                    </span>
+                    <span className="flex items-center gap-1 text-[#79513B]">
+                      <Share2 className="w-3.5 h-3.5" /> Share
+                    </span>
+                  </div>
                 </div>
-              </div>
-            ))}
+              );
+            })}
           </div>
         </div>
 

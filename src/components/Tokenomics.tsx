@@ -146,7 +146,7 @@ export const Tokenomics: React.FC = () => {
         </div>
 
         {/* Technical Specs Table */}
-        <div className="cartoon-card bg-white rounded-3xl p-6 sm:p-8">
+        <div className="cartoon-card bg-[#f0a7a7] rounded-3xl p-6 sm:p-8">
           <h3 className="text-2xl font-bold font-heading text-[#49200B] mb-6 flex items-center gap-2">
             <ShieldCheck className="w-6 h-6 text-[#FF9F00]" />
             <span>Token Specification &amp; Contract Safety</span>

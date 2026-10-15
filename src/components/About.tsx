@@ -77,48 +77,48 @@ export const About: React.FC = () => {
           </div>
         </div>
 
-        {/* 4 Feature Cards (Bold vibrant colors with high-contrast readable text) */}
+        {/* 4 Feature Cards */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           
-          {/* Card 1: Open Launch (Bold Sunset Orange) */}
+          {/* Card 1: Open Launch */}
           <div
             onMouseEnter={() => sounds.pop()}
-            className="cartoon-card bg-[#EA580C] text-white rounded-3xl p-6 hover:-translate-y-1 hover:shadow-[4px_5px_0px_#49200B] transition-all duration-200 cursor-pointer group"
+            className="cartoon-card bg-[#c3a592] text-[#49200B] rounded-3xl p-6 hover:-translate-y-1 hover:shadow-[4px_5px_0px_#49200B] transition-all duration-200 cursor-pointer group"
           >
             <div className="w-12 h-12 rounded-2xl bg-white border-2 border-[#49200B] flex items-center justify-center text-2xl mb-4 shadow-[2px_2px_0px_#49200B] group-hover:scale-105 transition-transform">
-              <Scale className="w-6 h-6 text-[#EA580C]" />
+              <Scale className="w-6 h-6 text-[#49200B]" />
             </div>
-            <h3 className="text-xl font-extrabold font-heading text-white mb-2 drop-shadow-[0_1px_1px_rgba(0,0,0,0.25)]">
+            <h3 className="text-xl font-extrabold font-heading text-[#49200B] mb-2">
               Open Launch
             </h3>
-            <p className="text-sm text-orange-100 font-semibold leading-relaxed">
+            <p className="text-sm text-[#49200B]/90 font-semibold leading-relaxed">
               Launched on pump.fun. No presale, no private round. Every team wallet that buys at launch is listed on our Transparency page.
             </p>
           </div>
 
-          {/* Card 2: Authorities Revoked (Bold Emerald Green) */}
+          {/* Card 2: Authorities Revoked */}
           <div
             onMouseEnter={() => sounds.pop()}
-            className="cartoon-card bg-[#059669] text-white rounded-3xl p-6 hover:-translate-y-1 hover:shadow-[4px_5px_0px_#49200B] transition-all duration-200 cursor-pointer group"
+            className="cartoon-card bg-[#7fab86] text-[#49200B] rounded-3xl p-6 hover:-translate-y-1 hover:shadow-[4px_5px_0px_#49200B] transition-all duration-200 cursor-pointer group"
           >
             <div className="w-12 h-12 rounded-2xl bg-white border-2 border-[#49200B] flex items-center justify-center text-2xl mb-4 shadow-[2px_2px_0px_#49200B] group-hover:scale-105 transition-transform">
-              <Lock className="w-6 h-6 text-[#059669]" />
+              <Lock className="w-6 h-6 text-[#49200B]" />
             </div>
-            <h3 className="text-xl font-extrabold font-heading text-white mb-2 drop-shadow-[0_1px_1px_rgba(0,0,0,0.25)]">
+            <h3 className="text-xl font-extrabold font-heading text-[#49200B] mb-2">
               Authorities Revoked
             </h3>
-            <p className="text-sm text-emerald-100 font-semibold leading-relaxed">
+            <p className="text-sm text-[#49200B]/90 font-semibold leading-relaxed">
               Mint and freeze authority are revoked at launch, so no new $DODO can be created and no wallet can be frozen. Check it on Solscan.
             </p>
           </div>
 
-          {/* Card 3: Graduates On-Chain (Bold Royal Solana Indigo) */}
+          {/* Card 3: Graduates On-Chain */}
           <div
             onMouseEnter={() => sounds.pop()}
-            className="cartoon-card bg-[#4F46E5] text-white rounded-3xl p-6 hover:-translate-y-1 hover:shadow-[4px_5px_0px_#49200B] transition-all duration-200 cursor-pointer group"
+            className="cartoon-card bg-[#7f7ca1] text-white rounded-3xl p-6 hover:-translate-y-1 hover:shadow-[4px_5px_0px_#49200B] transition-all duration-200 cursor-pointer group"
           >
             <div className="w-12 h-12 rounded-2xl bg-white border-2 border-[#49200B] flex items-center justify-center text-2xl mb-4 shadow-[2px_2px_0px_#49200B] group-hover:scale-105 transition-transform">
-              <Globe2 className="w-6 h-6 text-[#4F46E5]" />
+              <Globe2 className="w-6 h-6 text-[#7f7ca1]" />
             </div>
             <h3 className="text-xl font-extrabold font-heading text-white mb-2 drop-shadow-[0_1px_1px_rgba(0,0,0,0.25)]">
               Graduates On-Chain
@@ -128,13 +128,13 @@ export const About: React.FC = () => {
             </p>
           </div>
 
-          {/* Card 4: Paws for a Cause (Bold Ruby Coral) */}
+          {/* Card 4: Paws for a Cause */}
           <div
             onMouseEnter={() => sounds.pop()}
-            className="cartoon-card bg-[#E11D48] text-white rounded-3xl p-6 hover:-translate-y-1 hover:shadow-[4px_5px_0px_#49200B] transition-all duration-200 cursor-pointer group"
+            className="cartoon-card bg-[#987178] text-white rounded-3xl p-6 hover:-translate-y-1 hover:shadow-[4px_5px_0px_#49200B] transition-all duration-200 cursor-pointer group"
           >
             <div className="w-12 h-12 rounded-2xl bg-white border-2 border-[#49200B] flex items-center justify-center text-2xl mb-4 shadow-[2px_2px_0px_#49200B] group-hover:scale-105 transition-transform">
-              <PawPrint className="w-6 h-6 text-[#E11D48]" />
+              <PawPrint className="w-6 h-6 text-[#987178]" />
             </div>
             <h3 className="text-xl font-extrabold font-heading text-white mb-2 drop-shadow-[0_1px_1px_rgba(0,0,0,0.25)]">
               Paws for a Cause
