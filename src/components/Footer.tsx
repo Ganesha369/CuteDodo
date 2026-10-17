@@ -5,7 +5,7 @@ import { FooterWalkingDog } from './FooterWalkingDog';
 
 export const Footer: React.FC = () => {
   return (
-    <footer className="bg-[#B7F34A] text-[#49200B] pt-16 pb-12 border-t-4 border-[#49200B] relative">
+    <footer className="bg-[#B7F34A] text-[#49200B] pt-16 pb-24 border-t-4 border-[#49200B] relative">
       {/* Animated Shih Tzu Dog Walking on Top Edge of Footer (reference image) */}
       <FooterWalkingDog />
 

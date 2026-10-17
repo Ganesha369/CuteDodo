@@ -65,7 +65,7 @@ export const Gallery: React.FC = () => {
   ];
 
   return (
-    <section id="gallery" className="py-8 sm:py-12 md:py-24 bg-transparent relative overflow-hidden">
+    <section id="gallery" style={{ backgroundColor: '#ffe1e1' }} className="py-8 sm:py-12 md:py-24 bg-[#ffe1e1] relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Header */}

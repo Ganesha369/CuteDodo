@@ -44,13 +44,13 @@ export const Hero: React.FC<HeroProps> = ({ onOpenBuyModal }) => {
   };
 
   return (
-    <section className="relative isolate overflow-hidden bg-[#FFF9F0] border-b border-[#49200B]/10"> 
+    <section className="relative overflow-hidden bg-[#FFF9F0] border-b border-[#49200B]/10"> 
 
       {/* (1) Top Div: from top h-[840px] on desktop, natural adaptive fit on mobile, containing the background video and hero content */}
       <div id="hero-top" className="relative w-full min-h-0 py-8 sm:py-12 lg:py-0 lg:h-[840px] overflow-hidden flex flex-col justify-center bg-[#FFF9F0]">
 
         {/* Background video - inside (1) top div, fully mobile responsive across all screens */}
-        <div className="absolute inset-0 w-full h-full overflow-hidden z-0 pointer-events-none">
+        <div className="absolute inset-0 w-full h-full overflow-hidden pointer-events-none">
           <video
             autoPlay
             loop
@@ -64,7 +64,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenBuyModal }) => {
 
         {/* Gradient overlay - transparent enough so video is vibrant on mobile and tablet */}
         <div
-          className="pointer-events-none absolute inset-0 z-[1]
+          className="pointer-events-none absolute inset-0
             bg-gradient-to-b
             from-[#FFF9F0]/25
             via-transparent
@@ -84,7 +84,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenBuyModal }) => {
         <div className="absolute top-1/3 -left-20 w-64 sm:w-80 h-64 sm:h-80 bg-[#FFD36A]/20 rounded-full blur-3xl pointer-events-none" aria-hidden="true" />
 
         {/* Hero Content Container (Fully responsive on mobile, tablet, and desktop) */}
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full my-auto">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative w-full my-auto">
         
         {/* Top Tagline / Mission Kickers */}
         <div className="flex flex-wrap items-center justify-center gap-1.5 sm:gap-2 mb-4 text-[11px] sm:text-xs md:text-sm font-bold font-heading text-[#49200B]">
@@ -117,23 +117,36 @@ export const Hero: React.FC<HeroProps> = ({ onOpenBuyModal }) => {
             </p>
 
 
-            {/* Token CA Container */}
-            <div style={{ minHeight: '75px', paddingTop: '5px' }} className="bg-[#FFF9F0] border-2 border-[#49200B] rounded-2xl p-2.5 sm:p-4 shadow-[2.5px_2.5px_0px_#49200B] sm:shadow-[3px_3px_0px_#49200B] mb-5 sm:mb-6 max-w-xl mx-auto lg:mx-0">
-              <div className="flex items-center justify-between gap-2 mb-1.5 sm:mb-2">
+            {/* Token CA Container - Fixed at bottom-center of viewport */}
+            <div
+              style={{ width: '604px', maxWidth: 'calc(100% - 1.5rem)', height: '75.9875px', paddingTop: '1px', paddingBottom: '0px' }}
+              className="fixed bottom-3 sm:bottom-4 left-1/2 -translate-x-1/2 z-[9999] bg-[#FFF9F0]/95 backdrop-blur-md border-2 border-[#49200B] rounded-2xl px-2.5 sm:px-3.5 shadow-[0_8px_30px_rgba(73,32,11,0.25),3px_3px_0px_#49200B] transition-all"
+            >
+              <div
+                style={{ marginTop: '0px', paddingTop: '4px' }}
+                className="flex items-center justify-between gap-2 mb-1.5 sm:mb-2"
+              >
                 <span className="text-[11px] sm:text-xs font-bold font-heading text-[#79513B] uppercase tracking-wider flex items-center gap-1">
                   <ShieldCheck className="w-3.5 h-3.5 text-[#FF9F00]" /> Token CA (Solana)
                 </span>
-                <span className="text-[10px] sm:text-xs font-bold font-heading px-2 py-0.5 bg-[#FFD36A] border border-[#49200B] rounded-md text-[#49200B]">
+                <span
+                  style={{ backgroundColor: '#ffcb3f' }}
+                  className="text-[10px] sm:text-xs font-bold font-heading px-2 py-0.5 border border-[#49200B] rounded-md text-[#49200B]"
+                >
                   Coming Soon
                 </span>
               </div>
               <div className="flex items-center gap-2">
-                <div className="flex-1 font-mono text-[11px] sm:text-sm text-[#49200B] font-semibold bg-white border border-[#49200B]/30 rounded-xl px-2.5 py-1.5 sm:px-3 sm:py-2 truncate">
+                <div
+                  style={{ height: '27.6px' }}
+                  className="flex-1 flex items-center font-mono text-[11px] sm:text-sm text-[#49200B] font-semibold bg-white border border-[#49200B]/30 rounded-xl px-2.5 py-0 sm:px-3 truncate"
+                >
                   {contractAddress}
                 </div>
                 <button
+                  style={{ height: '31.2px' }}
                   onClick={handleCopy}
-                  className="px-3 sm:px-4 py-1.5 sm:py-2 bg-[#FFD36A] hover:bg-[#ffc947] border-2 border-[#49200B] rounded-xl text-xs sm:text-sm font-bold font-heading text-[#49200B] flex items-center gap-1.5 shrink-0 shadow-[2px_2px_0px_#49200B] active:translate-y-0.5 transition-all"
+                  className="px-3 sm:px-4 py-0 bg-[#FFD36A] hover:bg-[#ffc947] border-2 border-[#49200B] rounded-xl text-xs sm:text-sm font-bold font-heading text-[#49200B] flex items-center justify-center gap-1.5 shrink-0 shadow-[2px_2px_0px_#49200B] active:translate-y-0.5 transition-all"
                 >
                   {copied ? (
                     <>

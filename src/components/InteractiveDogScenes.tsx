@@ -67,7 +67,7 @@ export const InteractiveDogScenes: React.FC = () => {
   };
 
   return (
-    <section id="scenes" className="py-16 md:py-24 bg-transparent relative">
+    <section id="scenes" style={{ backgroundColor: '#caf5ff' }} className="py-16 md:py-24 bg-[#caf5ff] relative">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Header */}

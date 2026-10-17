@@ -136,7 +136,7 @@ export default function App() {
             />
 
             {/* Section 3: Interactive Dog Scenes (5 Life Scenes Theater) */}
-            <div id="section-scenes" className="relative w-full bg-[#F0FAF4] border-b border-[#49200B]/10">
+            <div id="section-scenes" className="relative w-full bg-[#caf5ff] border-b border-[#49200B]/10">
               <InteractiveDogScenes />
             </div>
 
@@ -155,7 +155,7 @@ export default function App() {
             />
 
             {/* Section 4: Gallery (Scrapbook & Candids) */}
-            <div id="section-gallery" className="relative w-full bg-[#FFFBEA] border-b border-[#49200B]/10">
+            <div id="section-gallery" className="relative w-full bg-[#ffe1e1] border-b border-[#49200B]/10">
               <Gallery />
             </div>
 
