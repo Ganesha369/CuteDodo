@@ -34,75 +34,75 @@ export const Community: React.FC = () => {
   ];
 
   return (
-    <section id="community" className="py-16 md:py-24 bg-transparent relative">
+    <section id="community" className="py-8 sm:py-12 md:py-24 bg-transparent relative">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Header */}
-        <div className="text-center max-w-3xl mx-auto mb-16">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1 bg-[#F7D9C7] border border-[#49200B]/30 rounded-xl text-xs font-bold font-heading text-[#49200B] shadow-[1.5px_1.5px_0px_#49200B] mb-3">
+        <div className="text-center max-w-3xl mx-auto mb-8 sm:mb-16">
+          <div className="inline-flex items-center gap-2 px-3 py-1 bg-[#F7D9C7] border border-[#49200B]/30 rounded-xl text-xs font-bold font-heading text-[#49200B] shadow-[1.5px_1.5px_0px_#49200B] mb-2 sm:mb-3">
             <span>🌐 Global Pack</span>
           </div>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold font-heading text-[#49200B] tracking-tight mb-3">
+          <h2 className="text-2xl sm:text-4xl lg:text-5xl font-extrabold font-heading text-[#49200B] tracking-tight mb-2 sm:mb-3">
             Join the <span className="text-[#FF9F00]">Dodo Pack</span>
           </h2>
-          <p className="text-base sm:text-lg text-[#79513B] font-medium">
+          <p className="text-sm sm:text-base lg:text-lg text-[#79513B] font-medium">
             Driven by community. Fueled by kindness. Launch news, memes and the shelter votes all happen here.
           </p>
         </div>
 
         {/* 3 Main Community Hub Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-16">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-3.5 sm:gap-6 mb-8 sm:mb-16">
           
           <a
             href="https://t.me/+pjv_zrm5Cjc1MWNl"
             target="_blank"
             rel="noreferrer"
             onClick={() => sounds.pop()}
-            className="cartoon-card bg-[#c6f7f7] rounded-3xl p-6 text-center group hover:opacity-95 transition-all flex flex-col items-center justify-between"
+            className="cartoon-card bg-[#c6f7f7] rounded-2xl sm:rounded-3xl p-4 sm:p-6 text-center group hover:opacity-95 transition-all flex flex-col items-center justify-between"
           >
             <div>
-              <div className="w-16 h-16 rounded-3xl bg-[#C6EAD7] border-2 border-[#49200B] flex items-center justify-center text-3xl mb-4 mx-auto shadow-[3px_3px_0px_#49200B] group-hover:scale-105 transition-transform">
+              <div className="w-12 h-12 sm:w-16 sm:h-16 rounded-2xl sm:rounded-3xl bg-[#C6EAD7] border-2 border-[#49200B] flex items-center justify-center text-2xl sm:text-3xl mb-3 sm:mb-4 mx-auto shadow-[2px_2px_0px_#49200B] sm:shadow-[3px_3px_0px_#49200B] group-hover:scale-105 transition-transform">
                 ✈️
               </div>
-              <h3 className="text-2xl font-bold font-heading text-[#49200B] mb-1">
+              <h3 className="text-xl sm:text-2xl font-bold font-heading text-[#49200B] mb-1">
                 Telegram
               </h3>
-              <p className="text-sm font-bold font-heading text-[#FF9F00] mb-3">
+              <p className="text-xs sm:text-sm font-bold font-heading text-[#FF9F00] mb-2 sm:mb-3">
                 Chat with the pack
               </p>
               <p className="text-xs text-[#79513B] font-medium leading-relaxed">
                 Live 24/7 community voice, launch countdown, memes, and direct updates from VJDurga.
               </p>
             </div>
-            <div className="mt-6 w-full py-2.5 rounded-xl bg-[#C6EAD7] border-2 border-[#49200B] font-bold font-heading text-xs text-[#49200B] flex items-center justify-center gap-1 shadow-[2px_2px_0px_#49200B]">
+            <div className="mt-4 sm:mt-6 w-full py-2 sm:py-2.5 rounded-xl bg-[#C6EAD7] border-2 border-[#49200B] font-bold font-heading text-xs text-[#49200B] flex items-center justify-center gap-1 shadow-[1.5px_1.5px_0px_#49200B] sm:shadow-[2px_2px_0px_#49200B]">
               <span>Join Telegram Group</span>
               <ExternalLink className="w-3.5 h-3.5" />
             </div>
           </a>
 
           <a
-            href="https://x.com/CuteDoDoToken"
+            href="https://x.com/CuteDODO_18"
             target="_blank"
             rel="noreferrer"
             onClick={() => sounds.pop()}
-            className="cartoon-card bg-[#f5d9d5] rounded-3xl p-6 text-center group hover:opacity-95 transition-all flex flex-col items-center justify-between"
+            className="cartoon-card bg-[#f5d9d5] rounded-2xl sm:rounded-3xl p-4 sm:p-6 text-center group hover:opacity-95 transition-all flex flex-col items-center justify-between"
           >
             <div>
-              <div className="w-16 h-16 rounded-3xl bg-[#FFD36A] border-2 border-[#49200B] flex items-center justify-center text-3xl mb-4 mx-auto shadow-[3px_3px_0px_#49200B] group-hover:scale-105 transition-transform">
+              <div className="w-12 h-12 sm:w-16 sm:h-16 rounded-2xl sm:rounded-3xl bg-[#FFD36A] border-2 border-[#49200B] flex items-center justify-center text-2xl sm:text-3xl mb-3 sm:mb-4 mx-auto shadow-[2px_2px_0px_#49200B] sm:shadow-[3px_3px_0px_#49200B] group-hover:scale-105 transition-transform">
                 𝕏
               </div>
-              <h3 className="text-2xl font-bold font-heading text-[#49200B] mb-1">
+              <h3 className="text-xl sm:text-2xl font-bold font-heading text-[#49200B] mb-1">
                 X (Twitter)
               </h3>
-              <p className="text-sm font-bold font-heading text-[#FF9F00] mb-3">
+              <p className="text-xs sm:text-sm font-bold font-heading text-[#FF9F00] mb-2 sm:mb-3">
                 Announcements &amp; memes
               </p>
               <p className="text-xs text-[#79513B] font-medium leading-relaxed">
                 Official news, viral dog memes, milestone updates, and daily videos of Dodo!
               </p>
             </div>
-            <div className="mt-6 w-full py-2.5 rounded-xl bg-[#FFD36A] border-2 border-[#49200B] font-bold font-heading text-xs text-[#49200B] flex items-center justify-center gap-1 shadow-[2px_2px_0px_#49200B]">
-              <span>Follow @CuteDoDoToken</span>
+            <div className="mt-4 sm:mt-6 w-full py-2 sm:py-2.5 rounded-xl bg-[#FFD36A] border-2 border-[#49200B] font-bold font-heading text-xs text-[#49200B] flex items-center justify-center gap-1 shadow-[1.5px_1.5px_0px_#49200B] sm:shadow-[2px_2px_0px_#49200B]">
+              <span>Follow @CuteDoDo</span>
               <ExternalLink className="w-3.5 h-3.5" />
             </div>
           </a>
@@ -112,23 +112,23 @@ export const Community: React.FC = () => {
             target="_blank"
             rel="noreferrer"
             onClick={() => sounds.pop()}
-            className="cartoon-card bg-[#d4d5eb] rounded-3xl p-6 text-center group hover:opacity-95 transition-all flex flex-col items-center justify-between"
+            className="cartoon-card bg-[#d4d5eb] rounded-2xl sm:rounded-3xl p-4 sm:p-6 text-center group hover:opacity-95 transition-all flex flex-col items-center justify-between"
           >
             <div>
-              <div className="w-16 h-16 rounded-3xl bg-[#F7D9C7] border-2 border-[#49200B] flex items-center justify-center text-3xl mb-4 mx-auto shadow-[3px_3px_0px_#49200B] group-hover:scale-105 transition-transform">
+              <div className="w-12 h-12 sm:w-16 sm:h-16 rounded-2xl sm:rounded-3xl bg-[#F7D9C7] border-2 border-[#49200B] flex items-center justify-center text-2xl sm:text-3xl mb-3 sm:mb-4 mx-auto shadow-[2px_2px_0px_#49200B] sm:shadow-[3px_3px_0px_#49200B] group-hover:scale-105 transition-transform">
                 👾
               </div>
-              <h3 className="text-2xl font-bold font-heading text-[#49200B] mb-1">
+              <h3 className="text-xl sm:text-2xl font-bold font-heading text-[#49200B] mb-1">
                 Discord
               </h3>
-              <p className="text-sm font-bold font-heading text-[#FF9F00] mb-3">
+              <p className="text-xs sm:text-sm font-bold font-heading text-[#FF9F00] mb-2 sm:mb-3">
                 Holder chat &amp; votes
               </p>
               <p className="text-xs text-[#79513B] font-medium leading-relaxed">
                 Holder verification, shelter governance channel, meme contests, and international chat.
               </p>
             </div>
-            <div className="mt-6 w-full py-2.5 rounded-xl bg-[#F7D9C7] border-2 border-[#49200B] font-bold font-heading text-xs text-[#49200B] flex items-center justify-center gap-1 shadow-[2px_2px_0px_#49200B]">
+            <div className="mt-4 sm:mt-6 w-full py-2 sm:py-2.5 rounded-xl bg-[#F7D9C7] border-2 border-[#49200B] font-bold font-heading text-xs text-[#49200B] flex items-center justify-center gap-1 shadow-[1.5px_1.5px_0px_#49200B] sm:shadow-[2px_2px_0px_#49200B]">
               <span>Enter Discord Server</span>
               <ExternalLink className="w-3.5 h-3.5" />
             </div>
@@ -137,7 +137,7 @@ export const Community: React.FC = () => {
         </div>
 
         {/* Latest from @CuteDoDoToken Feed */}
-        <div className="cartoon-card bg-[#FFF9F0] rounded-3xl p-6 sm:p-8">
+        <div className="cartoon-card bg-[#FFF9F0] rounded-2xl sm:rounded-3xl p-4 sm:p-8">
           <div className="flex flex-wrap items-center justify-between gap-3 mb-6 pb-4 border-b border-[#49200B]/15">
             <div>
               <h3 className="text-2xl font-bold font-heading text-[#49200B]">

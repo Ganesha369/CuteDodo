@@ -1,4 +1,4 @@
-import React, { useState, useRef } from 'react';
+import React, { useState } from 'react';
 import { Copy, Check, ExternalLink, ArrowRight, ShieldCheck, Heart, Sparkles, MousePointer } from 'lucide-react';
 import { sounds } from '../utils/soundEffects';
 import { ForestDriveScene } from './ForestDriveScene';
@@ -16,27 +16,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenBuyModal }) => {
   const [mascotMood, setMascotMood] = useState<'happy' | 'barking' | 'eating'>('happy');
   const [speechBubbleText, setSpeechBubbleText] = useState('Woof! Welcome to my pack! 🐾');
 
-  // Mouse parallax tilt state for Hero Mascot Card
-  const [mascotTilt, setMascotTilt] = useState({ rx: 0, ry: 0, glowX: 50, glowY: 50 });
-  const mascotCardRef = useRef<HTMLDivElement>(null);
 
-  const handleMascotMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
-    if (!mascotCardRef.current) return;
-    const rect = mascotCardRef.current.getBoundingClientRect();
-    const x = e.clientX - rect.left;
-    const y = e.clientY - rect.top;
-    const centerX = rect.width / 2;
-    const centerY = rect.height / 2;
-    const rx = ((y - centerY) / centerY) * -12; // tilt X
-    const ry = ((x - centerX) / centerX) * 12;  // tilt Y
-    const glowX = (x / rect.width) * 100;
-    const glowY = (y / rect.height) * 100;
-    setMascotTilt({ rx, ry, glowX, glowY });
-  };
-
-  const handleMascotMouseLeave = () => {
-    setMascotTilt({ rx: 0, ry: 0, glowX: 50, glowY: 50 });
-  };
 
   const contractAddress = 'Coming soon';
 
@@ -111,7 +91,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenBuyModal }) => {
           <span className="flex items-center gap-1.5 px-2.5 sm:px-3 py-1 bg-[#F7D9C7] border border-[#49200B]/30 rounded-xl shadow-[1.5px_1.5px_0px_#49200B]">
             🐾 A real dog. A real cause. On Solana.
           </span>
-          <span className="flex items-center gap-1.5 px-2.5 sm:px-3 py-1 bg-[#C6EAD7] border border-[#49200B]/30 rounded-xl shadow-[1.5px_1.5px_0px_#49200B]">
+          <span className="flex items-center gap-1.5 px-2.5 sm:px-3 py-1 bg-[#ffc849] border border-[#49200B]/30 rounded-xl shadow-[1.5px_1.5px_0px_#49200B]">
             ⛓️ Built on Solana
           </span>
           <span className="flex items-center gap-1.5 px-2.5 sm:px-3 py-1 bg-[#FFD36A] border border-[#49200B]/30 rounded-xl shadow-[1.5px_1.5px_0px_#49200B]">
@@ -124,45 +104,45 @@ export const Hero: React.FC<HeroProps> = ({ onOpenBuyModal }) => {
           
           {/* Column 1: Copy & Call-To-Actions (7 Cols) */}
           <div className="lg:col-span-7 text-center lg:text-left">
-            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold font-heading text-[#49200B] tracking-tight leading-[1.1] mb-3 sm:mb-4">
+            <h1 className="text-2xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold font-heading text-[#49200B] tracking-tight leading-[1.15] mb-2 sm:mb-4">
               The Most Wholesome Family Movement on{' '}
               
-<span className="text-[#FF9F00] text-5xl sm:text-6xl lg:text-7xl font-extrabold">
+<span className="text-[#FF9F00] text-3xl sm:text-5xl lg:text-7xl font-extrabold block sm:inline">
   SOLANA
 </span>
             </h1>
 
-            <p className="text-lg sm:text-xl lg:text-2xl font-bold font-heading text-[#79513B] mb-3 sm:mb-4">
+            <p className="text-sm sm:text-xl lg:text-2xl font-bold font-heading text-[#80371d] mb-3 sm:mb-4">
               Big Memes. Bigger Heart. Saving strays, one block at a time.
             </p>
 
 
             {/* Token CA Container */}
-            <div style={{ height: '85.988px', paddingTop: '5px' }} className="bg-[#FFF9F0] border-2 border-[#49200B] rounded-2xl p-3.5 sm:p-4 shadow-[3px_3px_0px_#49200B] mb-6 max-w-xl mx-auto lg:mx-0">
-              <div className="flex items-center justify-between gap-2 mb-2">
-                <span className="text-xs font-bold font-heading text-[#79513B] uppercase tracking-wider flex items-center gap-1">
+            <div style={{ minHeight: '75px', paddingTop: '5px' }} className="bg-[#FFF9F0] border-2 border-[#49200B] rounded-2xl p-2.5 sm:p-4 shadow-[2.5px_2.5px_0px_#49200B] sm:shadow-[3px_3px_0px_#49200B] mb-5 sm:mb-6 max-w-xl mx-auto lg:mx-0">
+              <div className="flex items-center justify-between gap-2 mb-1.5 sm:mb-2">
+                <span className="text-[11px] sm:text-xs font-bold font-heading text-[#79513B] uppercase tracking-wider flex items-center gap-1">
                   <ShieldCheck className="w-3.5 h-3.5 text-[#FF9F00]" /> Token CA (Solana)
                 </span>
-                <span className="text-xs font-bold font-heading px-2.5 py-0.5 bg-[#FFD36A] border border-[#49200B] rounded-md text-[#49200B]">
+                <span className="text-[10px] sm:text-xs font-bold font-heading px-2 py-0.5 bg-[#FFD36A] border border-[#49200B] rounded-md text-[#49200B]">
                   Coming Soon
                 </span>
               </div>
               <div className="flex items-center gap-2">
-                <div className="flex-1 font-mono text-xs sm:text-sm text-[#49200B] font-semibold bg-white border border-[#49200B]/30 rounded-xl px-3 py-2 truncate">
+                <div className="flex-1 font-mono text-[11px] sm:text-sm text-[#49200B] font-semibold bg-white border border-[#49200B]/30 rounded-xl px-2.5 py-1.5 sm:px-3 sm:py-2 truncate">
                   {contractAddress}
                 </div>
                 <button
                   onClick={handleCopy}
-                  className="px-3.5 sm:px-4 py-2 bg-[#FFD36A] hover:bg-[#ffc947] border-2 border-[#49200B] rounded-xl text-xs sm:text-sm font-bold font-heading text-[#49200B] flex items-center gap-1.5 shrink-0 shadow-[2px_2px_0px_#49200B] active:translate-y-0.5 transition-all"
+                  className="px-3 sm:px-4 py-1.5 sm:py-2 bg-[#FFD36A] hover:bg-[#ffc947] border-2 border-[#49200B] rounded-xl text-xs sm:text-sm font-bold font-heading text-[#49200B] flex items-center gap-1.5 shrink-0 shadow-[2px_2px_0px_#49200B] active:translate-y-0.5 transition-all"
                 >
                   {copied ? (
                     <>
-                      <Check className="w-4 h-4 text-emerald-800" />
+                      <Check className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-emerald-800" />
                       <span>Copied!</span>
                     </>
                   ) : (
                     <>
-                      <Copy className="w-4 h-4 text-[#49200B]" />
+                      <Copy className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-[#49200B]" />
                       <span>Copy CA</span>
                     </>
                   )}
@@ -171,26 +151,26 @@ export const Hero: React.FC<HeroProps> = ({ onOpenBuyModal }) => {
             </div>
 
             {/* Action Buttons */}
-            <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-center lg:justify-start gap-3 sm:gap-4 mb-6">
+            <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-center lg:justify-start gap-2.5 sm:gap-4 mb-5 sm:mb-6">
               <a
                 href="#buy"
                 onClick={() => {
                   sounds.coin();
                   if (onOpenBuyModal) onOpenBuyModal();
                 }}
-                className="w-full sm:w-auto px-6 py-3.5 bg-[#FFD36A] hover:bg-[#ffc947] text-[#49200B] font-heading text-base sm:text-lg font-bold rounded-2xl flex items-center justify-center gap-2 border-2 border-[#49200B] shadow-[3.5px_3.5px_0px_#49200B] active:translate-x-0.5 active:translate-y-0.5 active:shadow-[1px_1px_0px_#49200B] transition-all"
+                className="w-full sm:w-auto px-4 py-2.5 sm:px-6 sm:py-3.5 bg-[#FFD36A] hover:bg-[#ffc947] text-[#49200B] font-heading text-sm sm:text-lg font-bold rounded-2xl flex items-center justify-center gap-2 border-2 border-[#49200B] shadow-[2.5px_2.5px_0px_#49200B] sm:shadow-[3.5px_3.5px_0px_#49200B] active:translate-x-0.5 active:translate-y-0.5 transition-all"
               >
-                <Sparkles className="w-5 h-5 text-[#49200B]" />
+                <Sparkles className="w-4 h-4 sm:w-5 sm:h-5 text-[#49200B]" />
                 <span>Buy $DODO</span>
               </a>
 
               <a
                 href="#community"
                 onClick={() => sounds.pop()}
-                className="w-full sm:w-auto px-6 py-3.5 bg-white hover:bg-[#F7D9C7] text-[#49200B] font-heading text-base sm:text-lg font-bold rounded-2xl flex items-center justify-center gap-2 border-2 border-[#49200B] shadow-[3.5px_3.5px_0px_#49200B] active:translate-x-0.5 active:translate-y-0.5 active:shadow-[1px_1px_0px_#49200B] transition-all"
+                className="w-full sm:w-auto px-4 py-2.5 sm:px-6 sm:py-3.5 bg-white hover:bg-[#F7D9C7] text-[#49200B] font-heading text-sm sm:text-lg font-bold rounded-2xl flex items-center justify-center gap-2 border-2 border-[#49200B] shadow-[2.5px_2.5px_0px_#49200B] sm:shadow-[3.5px_3.5px_0px_#49200B] active:translate-x-0.5 active:translate-y-0.5 transition-all"
               >
                 <span>Join the Community</span>
-                <ArrowRight className="w-5 h-5 text-[#49200B]" />
+                <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5 text-[#49200B]" />
               </a>
             </div>
 
@@ -202,16 +182,16 @@ export const Hero: React.FC<HeroProps> = ({ onOpenBuyModal }) => {
                 target="_blank"
                 rel="noreferrer"
                 onClick={() => sounds.pop()}
-                className="hover:scale-105 transition-transform flex items-center gap-1.5 text-[#49200B] bg-[#FFF9F0] hover:bg-[#F7D9C7] border border-[#49200B]/30 px-3 py-1.5 rounded-xl shadow-[1.5px_1.5px_0px_#49200B]"
+                className="hover:scale-105 transition-transform flex items-center gap-1.5 text-[#ffecec] bg-[#24A1DE] border border-[#49200B]/30 px-3 py-1.5 rounded-xl shadow-[1.5px_1.5px_0px_#49200B] font-bold"
               >
                 ✈️ Telegram
               </a>
               <a
-                href="https://x.com/CuteDoDoToken"
+                href="https://x.com/CuteDODO_18"
                 target="_blank"
                 rel="noreferrer"
                 onClick={() => sounds.pop()}
-                className="hover:scale-105 transition-transform flex items-center gap-1.5 text-[#49200B] bg-[#FFF9F0] hover:bg-[#F7D9C7] border border-[#49200B]/30 px-3 py-1.5 rounded-xl shadow-[1.5px_1.5px_0px_#49200B]"
+                className="hover:scale-105 transition-transform flex items-center gap-1.5 text-[#ffffff] bg-[#0d0d0d] border border-[#49200B]/30 px-3 py-1.5 rounded-xl shadow-[1.5px_1.5px_0px_#49200B] font-bold"
               >
                 𝕏 Twitter
               </a>
@@ -220,7 +200,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenBuyModal }) => {
                 target="_blank"
                 rel="noreferrer"
                 onClick={() => sounds.pop()}
-                className="hover:scale-105 transition-transform flex items-center gap-1.5 text-[#49200B] bg-[#FFF9F0] hover:bg-[#F7D9C7] border border-[#49200B]/30 px-3 py-1.5 rounded-xl shadow-[1.5px_1.5px_0px_#49200B]"
+                className="hover:scale-105 transition-transform flex items-center gap-1.5 text-[#fffbfb] bg-[#5865f2] border border-[#49200B]/30 px-3 py-1.5 rounded-xl shadow-[1.5px_1.5px_0px_#49200B] font-bold"
               >
                 👾 Discord
               </a>
@@ -229,93 +209,21 @@ export const Hero: React.FC<HeroProps> = ({ onOpenBuyModal }) => {
           </div>
 
           {/* Column 2: Large Storybook Illustrated Scene for Mascot (5 Cols) */}
-          <div className="lg:col-span-5 flex flex-col items-center">
+          <div className="lg:col-span-5 flex flex-col items-center lg:items-end justify-end mt-auto self-end">
             
             {/* Playful Storybook Speech Bubble */}
-            <div className="relative mb-3 bg-white border-2 border-[#49200B] rounded-2xl px-4 py-2.5 shadow-[2.5px_2.5px_0px_#49200B] text-xs sm:text-sm font-bold font-heading text-[#49200B] max-w-xs text-center animate-bounce translate-x-0 lg:translate-x-10">
-              {speechBubbleText}
+            <div
+              onClick={handleMascotClick}
+              className="relative mb-2 sm:mb-4 bg-white/95 border-2 border-[#49200B] rounded-2xl px-3.5 py-2 sm:px-5 sm:py-3 shadow-[2.5px_2.5px_0px_#49200B] text-xs sm:text-sm font-bold font-heading text-[#49200B] max-w-[260px] sm:max-w-xs text-center animate-bounce translate-x-0 lg:translate-x-4 lg:mr-10 cursor-pointer select-none transition-transform hover:scale-105 active:scale-95"
+              title="Click to hear Dodo bark!"
+            >
+              <div className="flex items-center justify-center gap-1.5 mb-0.5 text-[10px] text-[#FF9F00] uppercase font-bold tracking-wider">
+                <span>🔊 Dodo says:</span>
+              </div>
+              <p>{speechBubbleText}</p>
               {/* Bubble pointer */}
               <div className="absolute -bottom-2 left-1/2 -translate-x-1/2 w-3.5 h-3.5 bg-white border-r-2 border-b-2 border-[#49200B] rotate-45"></div>
             </div>
-
-            {/* Illustrated Storybook Stage with Decorative Floating Elements */}
-            <div className="relative flex items-center justify-center p-2 select-none translate-x-0 lg:translate-x-10">
-              
-              {/* Warm circular storybook backdrop */}
-              <div 
-                className="absolute inset-0 m-auto w-56 h-56 xs:w-64 xs:h-64 sm:w-80 sm:h-80 rounded-full bg-gradient-to-b from-[#F7D9C7]/70 to-[#FFD36A]/50 border-2 border-dashed border-[#49200B]/25 -z-0"
-                aria-hidden="true"
-              />
-
-              {/* Decorative storybook stickers */}
-              <div className="absolute -top-2 -left-2 text-xl select-none z-10 animate-float" aria-hidden="true">
-                🦴
-              </div>
-              <div className="absolute top-2 -right-3 text-xl select-none z-10" aria-hidden="true">
-                🐾
-              </div>
-              <div className="absolute -bottom-2 -left-3 text-xl select-none z-10" aria-hidden="true">
-                🍀
-              </div>
-              <div className="absolute -bottom-1 -right-2 text-xl select-none z-10 animate-pulse" aria-hidden="true">
-                ❤️
-              </div>
-
-              {/* Mascot Character Avatar with Interactive Mouse 3D Parallax */}
-              <div
-                ref={mascotCardRef}
-                onMouseMove={handleMascotMouseMove}
-                onMouseLeave={handleMascotMouseLeave}
-                onClick={handleMascotClick}
-                className="relative cursor-pointer group select-none z-10"
-                title="Click me to hear Dodo bark and move mouse to tilt in 3D!"
-                style={{ perspective: 900 }}
-              >
-                <div
-                  className="relative w-52 h-52 xs:w-60 xs:h-60 sm:w-72 sm:h-72 lg:w-80 lg:h-80 mx-auto rounded-[2.5rem] overflow-hidden border-[3px] border-[#49200B] bg-[#FFF9F0] shadow-[5px_6px_0px_#49200B] p-2 transition-transform duration-100 ease-out will-change-transform"
-                  style={{
-                    transform: `rotateX(${mascotTilt.rx}deg) rotateY(${mascotTilt.ry}deg)`,
-                  }}
-                >
-                  <div className="relative w-full h-full rounded-[2rem] overflow-hidden bg-[#F7D9C7]">
-                    <img
-                      src="/assets/images/cutedodo_hero_mascot_1791659602047.jpg"
-                      alt="CuteDODO mascot"
-                      className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
-                    />
-
-                    {/* Interactive Dynamic Mouse Light Sheen */}
-                    <div
-                      className="absolute inset-0 pointer-events-none opacity-30 mix-blend-overlay transition-opacity duration-150"
-                      style={{
-                        background: `radial-gradient(circle 180px at ${mascotTilt.glowX}% ${mascotTilt.glowY}%, rgba(255,255,255,0.9), transparent 70%)`,
-                      }}
-                    />
-                  </div>
-                  
-                  {/* Floating collar bell overlay badge */}
-                  <div className="absolute bottom-4 right-4 bg-[#FFD36A] border-2 border-[#49200B] rounded-xl px-2.5 py-1 flex items-center gap-1 text-xs font-bold font-heading text-[#49200B] shadow-[2px_2px_0px_#49200B] z-10">
-                    <span>🔔 Golden Bell</span>
-                  </div>
-
-                  {/* Chennai stamp */}
-                  <div className="absolute top-4 left-4 bg-[#FFF9F0] border-2 border-[#49200B] rounded-xl px-2.5 py-1 flex items-center gap-1 text-xs font-bold font-heading text-[#49200B] shadow-[2px_2px_0px_#49200B] z-10">
-                    <span>🇮🇳 Chennai, TN</span>
-                  </div>
-                </div>
-
-                {/* Tap & Mouse prompt */}
-                <div className="mt-3 text-center flex flex-col items-center gap-1">
-                  <span className="inline-flex items-center gap-1.5 text-xs font-bold font-heading text-[#79513B] bg-[#FFF9F0] border border-[#49200B]/30 px-3.5 py-1 rounded-full shadow-[1px_1px_0px_#49200B]">
-                    <span>👆 Click to Bark</span>
-                    <span>·</span>
-                    <span>🖱️ Move Mouse to Tilt 3D</span>
-                  </span>
-                </div>
-              </div>
-
-            </div>
-
           </div>
 
         </div>
@@ -340,7 +248,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenBuyModal }) => {
       />
 
       {/* (2) Remaining Div: Railway scene, cartoon dog parade, garden scene, live market data, 4 pillars */}
-      <div id="hero-remaining" className="relative w-full py-12 md:py-16 bg-[#f1fff0]">
+      <div id="hero-remaining" className="relative w-full py-8 sm:py-12 md:py-16 bg-[#f1fff0]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
 
         {/* Forest Road Trip Scene: Owner and Shih Tzu Dog Driving on Infinite Wavy Road */}
@@ -449,12 +357,12 @@ export const Hero: React.FC<HeroProps> = ({ onOpenBuyModal }) => {
         {/* 4 Pillars Grid (Bold vibrant cartoon card design with high-contrast readable text) */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
           
-          {/* Pillar 1: Marketing Tokens (Bold Sunset Orange) */}
+          {/* Pillar 1: Marketing Tokens */}
           <div
             onMouseEnter={() => sounds.pop()}
-            className="cartoon-card bg-[#EA580C] text-white rounded-3xl p-5 hover:-translate-y-1 hover:shadow-[4px_5px_0px_#49200B] transition-all duration-200 cursor-pointer group"
+            className="cartoon-card bg-[#ff8049] text-white rounded-3xl p-5 hover:-translate-y-1 hover:shadow-[4px_5px_0px_#49200B] transition-all duration-200 cursor-pointer group"
           >
-            <div className="w-12 h-12 rounded-2xl bg-white border-2 border-[#49200B] flex items-center justify-center text-lg font-extrabold font-heading text-[#EA580C] mb-3 shadow-[2px_2px_0px_#49200B] group-hover:scale-105 transition-transform">
+            <div className="w-12 h-12 rounded-2xl bg-white border-2 border-[#49200B] flex items-center justify-center text-lg font-extrabold font-heading text-[#ff8049] mb-3 shadow-[2px_2px_0px_#49200B] group-hover:scale-105 transition-transform">
               0%
             </div>
             <h3 className="text-lg font-bold font-heading text-white mb-1.5 drop-shadow-[0_1px_1px_rgba(0,0,0,0.25)]">
@@ -465,10 +373,10 @@ export const Hero: React.FC<HeroProps> = ({ onOpenBuyModal }) => {
             </p>
           </div>
 
-          {/* Pillar 2: Every Team Wallet Public (Bold Emerald Green) */}
+          {/* Pillar 2: Every Team Wallet Public */}
           <div
             onMouseEnter={() => sounds.pop()}
-            className="cartoon-card bg-[#059669] text-white rounded-3xl p-5 hover:-translate-y-1 hover:shadow-[4px_5px_0px_#49200B] transition-all duration-200 cursor-pointer group"
+            className="cartoon-card bg-[#30c9a2] text-white rounded-3xl p-5 hover:-translate-y-1 hover:shadow-[4px_5px_0px_#49200B] transition-all duration-200 cursor-pointer group"
           >
             <div className="w-12 h-12 rounded-2xl bg-white border-2 border-[#49200B] flex items-center justify-center text-2xl mb-3 shadow-[2px_2px_0px_#49200B] group-hover:scale-105 transition-transform">
               👁️
@@ -481,12 +389,12 @@ export const Hero: React.FC<HeroProps> = ({ onOpenBuyModal }) => {
             </p>
           </div>
 
-          {/* Pillar 3: For Pet Shelters (Bold Ruby Coral) */}
+          {/* Pillar 3: For Pet Shelters */}
           <div
             onMouseEnter={() => sounds.pop()}
-            className="cartoon-card bg-[#E11D48] text-white rounded-3xl p-5 hover:-translate-y-1 hover:shadow-[4px_5px_0px_#49200B] transition-all duration-200 cursor-pointer group"
+            className="cartoon-card bg-[#d74a6c] text-white rounded-3xl p-5 hover:-translate-y-1 hover:shadow-[4px_5px_0px_#49200B] transition-all duration-200 cursor-pointer group"
           >
-            <div className="w-12 h-12 rounded-2xl bg-white border-2 border-[#49200B] flex items-center justify-center text-lg font-extrabold font-heading text-[#E11D48] mb-3 shadow-[2px_2px_0px_#49200B] group-hover:scale-105 transition-transform">
+            <div className="w-12 h-12 rounded-2xl bg-white border-2 border-[#49200B] flex items-center justify-center text-lg font-extrabold font-heading text-[#d74a6c] mb-3 shadow-[2px_2px_0px_#49200B] group-hover:scale-105 transition-transform">
               1%
             </div>
             <h3 className="text-lg font-bold font-heading text-white mb-1.5 drop-shadow-[0_1px_1px_rgba(0,0,0,0.25)]">
@@ -497,12 +405,12 @@ export const Hero: React.FC<HeroProps> = ({ onOpenBuyModal }) => {
             </p>
           </div>
 
-          {/* Pillar 4: Buy & Sell Tax (Bold Royal Solana Indigo) */}
+          {/* Pillar 4: Buy & Sell Tax */}
           <div
             onMouseEnter={() => sounds.pop()}
-            className="cartoon-card bg-[#4F46E5] text-white rounded-3xl p-5 hover:-translate-y-1 hover:shadow-[4px_5px_0px_#49200B] transition-all duration-200 cursor-pointer group"
+            className="cartoon-card bg-[#7369ea] text-white rounded-3xl p-5 hover:-translate-y-1 hover:shadow-[4px_5px_0px_#49200B] transition-all duration-200 cursor-pointer group"
           >
-            <div className="w-12 h-12 rounded-2xl bg-white border-2 border-[#49200B] flex items-center justify-center text-lg font-extrabold font-heading text-[#4F46E5] mb-3 shadow-[2px_2px_0px_#49200B] group-hover:scale-105 transition-transform">
+            <div className="w-12 h-12 rounded-2xl bg-white border-2 border-[#49200B] flex items-center justify-center text-lg font-extrabold font-heading text-[#7369ea] mb-3 shadow-[2px_2px_0px_#49200B] group-hover:scale-105 transition-transform">
               0%
             </div>
             <h3 className="text-lg font-bold font-heading text-white mb-1.5 drop-shadow-[0_1px_1px_rgba(0,0,0,0.25)]">

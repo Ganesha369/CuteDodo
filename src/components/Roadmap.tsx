@@ -63,24 +63,24 @@ export const Roadmap: React.FC = () => {
   ];
 
   return (
-    <section id="roadmap" className="py-16 md:py-24 bg-transparent relative">
+    <section id="roadmap" className="py-8 sm:py-12 md:py-24 bg-transparent relative">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Header */}
-        <div className="text-center max-w-3xl mx-auto mb-16">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1 bg-[#FFD36A] border border-[#49200B]/30 rounded-xl text-xs font-bold font-heading text-[#49200B] shadow-[1.5px_1.5px_0px_#49200B] mb-3">
+        <div className="text-center max-w-3xl mx-auto mb-8 sm:mb-16">
+          <div className="inline-flex items-center gap-2 px-3 py-1 bg-[#FFD36A] border border-[#49200B]/30 rounded-xl text-xs font-bold font-heading text-[#49200B] shadow-[1.5px_1.5px_0px_#49200B] mb-2 sm:mb-3">
             <span>🗺️ The Master Paw Plan</span>
           </div>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold font-heading text-[#49200B] tracking-tight mb-3">
+          <h2 className="text-2xl sm:text-4xl lg:text-5xl font-extrabold font-heading text-[#49200B] tracking-tight mb-2 sm:mb-3">
             The Plan, <span className="text-[#FF9F00]">Paw by Paw</span>
           </h2>
-          <p className="text-base sm:text-lg text-[#79513B] font-medium">
+          <p className="text-sm sm:text-base lg:text-lg text-[#79513B] font-medium">
             Goals, not promises. Each phase is updated here as it happens.
           </p>
         </div>
 
         {/* 4 Phases Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-3.5 sm:gap-6">
           {phases.map((ph, phIdx) => {
             const phaseBgs = ['bg-[#f0c8ed]', 'bg-[#f6dfb9]', 'bg-[#bef0c4]', 'bg-[#96ece5]'];
             const cardBg = phaseBgs[phIdx] || 'bg-[#FFF9F0]';
@@ -88,19 +88,19 @@ export const Roadmap: React.FC = () => {
             return (
               <div
                 key={ph.phaseNumber}
-                className={`cartoon-card ${cardBg} rounded-3xl p-6 flex flex-col justify-between`}
+                className={`cartoon-card ${cardBg} rounded-2xl sm:rounded-3xl p-4 sm:p-6 flex flex-col justify-between`}
               >
                 <div>
-                  <div className="flex items-center justify-between mb-4">
-                    <span className="text-xs font-mono font-bold text-[#79513B]">
+                  <div className="flex items-center justify-between mb-3 sm:mb-4">
+                    <span className="text-[11px] sm:text-xs font-mono font-bold text-[#79513B]">
                       {ph.phaseNumber}
                     </span>
-                    <span className={`text-xs font-bold font-heading px-2.5 py-0.5 rounded-lg border border-[#49200B] shadow-[1px_1px_0px_#49200B] ${ph.badgeColor}`}>
+                    <span className={`text-[11px] sm:text-xs font-bold font-heading px-2 sm:px-2.5 py-0.5 rounded-lg border border-[#49200B] shadow-[1px_1px_0px_#49200B] ${ph.badgeColor}`}>
                       {ph.badge}
                     </span>
                   </div>
 
-                  <h3 className="text-2xl font-bold font-heading text-[#49200B] mb-4">
+                  <h3 className="text-xl sm:text-2xl font-bold font-heading text-[#49200B] mb-3 sm:mb-4">
                     {ph.title}
                   </h3>
 

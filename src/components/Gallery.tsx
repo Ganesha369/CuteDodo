@@ -65,36 +65,36 @@ export const Gallery: React.FC = () => {
   ];
 
   return (
-    <section id="gallery" className="py-16 md:py-24 bg-transparent relative overflow-hidden">
+    <section id="gallery" className="py-8 sm:py-12 md:py-24 bg-transparent relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Header */}
-        <div className="text-center max-w-3xl mx-auto mb-12">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1 bg-[#FFD36A] border border-[#49200B]/30 rounded-xl text-xs font-bold font-heading text-[#49200B] shadow-[1.5px_1.5px_0px_#49200B] mb-3">
+        <div className="text-center max-w-3xl mx-auto mb-8 sm:mb-12">
+          <div className="inline-flex items-center gap-2 px-3 py-1 bg-[#FFD36A] border border-[#49200B]/30 rounded-xl text-xs font-bold font-heading text-[#49200B] shadow-[1.5px_1.5px_0px_#49200B] mb-2 sm:mb-3">
             <span>📸 Real Pet Gallery</span>
           </div>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold font-heading text-[#49200B] tracking-tight mb-3">
+          <h2 className="text-2xl sm:text-4xl lg:text-5xl font-extrabold font-heading text-[#49200B] tracking-tight mb-2 sm:mb-3">
             Meet the Real Dodo
           </h2>
-          <p className="text-base sm:text-lg text-[#FF9F00] font-bold font-heading">
+          <p className="text-sm sm:text-lg text-[#FF9F00] font-bold font-heading">
             No stock photos: this is Dodo himself.
           </p>
-          <p className="text-sm text-[#79513B] mt-1 max-w-xl mx-auto font-medium">
+          <p className="text-xs sm:text-sm text-[#79513B] mt-1 max-w-xl mx-auto font-medium">
             From playful candid moments with the family to cartoon storybook creations, see the pure joy that inspired $DODO!
           </p>
 
           {/* View mode toggle buttons */}
-          <div className="flex items-center justify-center gap-2 mt-6">
+          <div className="flex flex-wrap items-center justify-center gap-1.5 sm:gap-2 mt-4 sm:mt-6">
             <button
               onClick={() => {
                 sounds.pop();
                 setViewMode('both');
               }}
-              className={`cartoon-btn px-4 py-2 text-xs sm:text-sm font-bold font-heading rounded-xl flex items-center gap-1.5 ${
+              className={`cartoon-btn px-2.5 py-1.5 sm:px-4 sm:py-2 text-[11px] sm:text-sm font-bold font-heading rounded-xl flex items-center gap-1 sm:gap-1.5 ${
                 viewMode === 'both' ? 'bg-[#FFD36A] text-[#49200B]' : 'bg-[#FFF9F0] text-[#79513B] hover:bg-[#F7D9C7]'
               }`}
             >
-              <Sparkles className="w-4 h-4 text-[#49200B]" />
+              <Sparkles className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-[#49200B]" />
               <span>Side-by-Side</span>
             </button>
 
@@ -103,11 +103,11 @@ export const Gallery: React.FC = () => {
                 sounds.pop();
                 setViewMode('real');
               }}
-              className={`cartoon-btn px-4 py-2 text-xs sm:text-sm font-bold font-heading rounded-xl flex items-center gap-1.5 ${
+              className={`cartoon-btn px-2.5 py-1.5 sm:px-4 sm:py-2 text-[11px] sm:text-sm font-bold font-heading rounded-xl flex items-center gap-1 sm:gap-1.5 ${
                 viewMode === 'real' ? 'bg-[#FFD36A] text-[#49200B]' : 'bg-[#FFF9F0] text-[#79513B] hover:bg-[#F7D9C7]'
               }`}
             >
-              <Camera className="w-4 h-4 text-[#49200B]" />
+              <Camera className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-[#49200B]" />
               <span>Real Photos 📸</span>
             </button>
 
@@ -116,18 +116,18 @@ export const Gallery: React.FC = () => {
                 sounds.pop();
                 setViewMode('cartoon');
               }}
-              className={`cartoon-btn px-4 py-2 text-xs sm:text-sm font-bold font-heading rounded-xl flex items-center gap-1.5 ${
+              className={`cartoon-btn px-2.5 py-1.5 sm:px-4 sm:py-2 text-[11px] sm:text-sm font-bold font-heading rounded-xl flex items-center gap-1 sm:gap-1.5 ${
                 viewMode === 'cartoon' ? 'bg-[#FFD36A] text-[#49200B]' : 'bg-[#FFF9F0] text-[#79513B] hover:bg-[#F7D9C7]'
               }`}
             >
-              <Palette className="w-4 h-4 text-[#49200B]" />
+              <Palette className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-[#49200B]" />
               <span>Cartoon Art 🎨</span>
             </button>
           </div>
         </div>
 
         {/* Gallery Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-8">
           {cards.map((card) => {
             const isSelected = activeCard === card.id;
 
@@ -138,7 +138,7 @@ export const Gallery: React.FC = () => {
                   sounds.bell();
                   setActiveCard(isSelected ? null : card.id);
                 }}
-                className={`cartoon-card bg-[#FFF9F0] rounded-3xl overflow-hidden cursor-pointer transition-all ${
+                className={`cartoon-card bg-[#FFF9F0] rounded-2xl sm:rounded-3xl overflow-hidden cursor-pointer transition-all ${
                   isSelected ? 'ring-3 ring-[#FF9F00] scale-[1.02]' : ''
                 }`}
               >

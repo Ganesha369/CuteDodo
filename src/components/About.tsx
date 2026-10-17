@@ -3,27 +3,27 @@ import { Heart, Scale, Lock, Globe2, PawPrint } from 'lucide-react';
 import { sounds } from '../utils/soundEffects';
 export const About: React.FC = () => {
   return (
-    <section id="about" className="py-16 md:py-24 bg-transparent relative">
+    <section id="about" className="py-8 sm:py-12 md:py-24 bg-transparent relative">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Header */}
-        <div className="text-center max-w-3xl mx-auto mb-16">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1 bg-[#F7D9C7] border border-[#49200B]/30 rounded-xl text-xs font-bold font-heading text-[#49200B] shadow-[1.5px_1.5px_0px_#49200B] mb-3">
+        <div className="text-center max-w-3xl mx-auto mb-8 sm:mb-16">
+          <div className="inline-flex items-center gap-2 px-3 py-1 bg-[#F7D9C7] border border-[#49200B]/30 rounded-xl text-xs font-bold font-heading text-[#49200B] shadow-[1.5px_1.5px_0px_#49200B] mb-2 sm:mb-3">
             <span>🐾 About CuteDoDo</span>
           </div>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold font-heading text-[#49200B] tracking-tight mb-4">
+          <h2 className="text-2xl sm:text-4xl lg:text-5xl font-extrabold font-heading text-[#49200B] tracking-tight mb-2 sm:mb-4">
             The Real Dog Behind <span className="text-[#FF9F00]">$DODO</span>
           </h2>
-          <p className="text-base sm:text-lg text-[#79513B] font-medium leading-relaxed">
+          <p className="text-sm sm:text-base lg:text-lg text-[#79513B] font-medium leading-relaxed">
             Dodo is a 1.2-year-old CuteDODO from Chennai, India. He loves dressing up, long naps and every person who walks through the door. $DODO turns that joy into a community, and part of it goes back to dogs who don&apos;t have a home yet.
           </p>
-          <p className="text-sm font-bold text-[#49200B] mt-2 font-heading">
+          <p className="text-xs sm:text-sm font-bold text-[#49200B] mt-1.5 sm:mt-2 font-heading">
             Inspired by one happy CuteDODO. Dedicated to giving every dog a home.
           </p>
         </div>
 
         {/* Big Heartwarming Story Showcase */}
-        <div className="cartoon-card bg-white rounded-3xl p-6 sm:p-8 lg:p-10 mb-16">
+        <div className="cartoon-card bg-white rounded-3xl p-4 sm:p-8 lg:p-10 mb-8 sm:mb-16">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
             
             {/* Story Text */}
@@ -78,20 +78,20 @@ export const About: React.FC = () => {
         </div>
 
         {/* 4 Feature Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-3.5 sm:gap-6">
           
           {/* Card 1: Open Launch */}
           <div
             onMouseEnter={() => sounds.pop()}
-            className="cartoon-card bg-[#c3a592] text-[#49200B] rounded-3xl p-6 hover:-translate-y-1 hover:shadow-[4px_5px_0px_#49200B] transition-all duration-200 cursor-pointer group"
+            className="cartoon-card bg-[#ffcbb0] text-[#49200B] rounded-2xl sm:rounded-3xl p-4 sm:p-6 hover:-translate-y-1 hover:shadow-[4px_5px_0px_#49200B] transition-all duration-200 cursor-pointer group"
           >
-            <div className="w-12 h-12 rounded-2xl bg-white border-2 border-[#49200B] flex items-center justify-center text-2xl mb-4 shadow-[2px_2px_0px_#49200B] group-hover:scale-105 transition-transform">
-              <Scale className="w-6 h-6 text-[#49200B]" />
+            <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-xl sm:rounded-2xl bg-white border-2 border-[#49200B] flex items-center justify-center text-xl sm:text-2xl mb-3 sm:mb-4 shadow-[2px_2px_0px_#49200B] group-hover:scale-105 transition-transform">
+              <Scale className="w-5 h-5 sm:w-6 sm:h-6 text-[#49200B]" />
             </div>
-            <h3 className="text-xl font-extrabold font-heading text-[#49200B] mb-2">
+            <h3 className="text-lg sm:text-xl font-extrabold font-heading text-[#49200B] mb-1.5 sm:mb-2">
               Open Launch
             </h3>
-            <p className="text-sm text-[#49200B]/90 font-semibold leading-relaxed">
+            <p className="text-xs sm:text-sm text-[#49200B]/90 font-semibold leading-relaxed">
               Launched on pump.fun. No presale, no private round. Every team wallet that buys at launch is listed on our Transparency page.
             </p>
           </div>
@@ -99,15 +99,15 @@ export const About: React.FC = () => {
           {/* Card 2: Authorities Revoked */}
           <div
             onMouseEnter={() => sounds.pop()}
-            className="cartoon-card bg-[#7fab86] text-[#49200B] rounded-3xl p-6 hover:-translate-y-1 hover:shadow-[4px_5px_0px_#49200B] transition-all duration-200 cursor-pointer group"
+            className="cartoon-card bg-[#b6ffc4] text-[#49200B] rounded-2xl sm:rounded-3xl p-4 sm:p-6 hover:-translate-y-1 hover:shadow-[4px_5px_0px_#49200B] transition-all duration-200 cursor-pointer group"
           >
-            <div className="w-12 h-12 rounded-2xl bg-white border-2 border-[#49200B] flex items-center justify-center text-2xl mb-4 shadow-[2px_2px_0px_#49200B] group-hover:scale-105 transition-transform">
-              <Lock className="w-6 h-6 text-[#49200B]" />
+            <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-xl sm:rounded-2xl bg-white border-2 border-[#49200B] flex items-center justify-center text-xl sm:text-2xl mb-3 sm:mb-4 shadow-[2px_2px_0px_#49200B] group-hover:scale-105 transition-transform">
+              <Lock className="w-5 h-5 sm:w-6 sm:h-6 text-[#49200B]" />
             </div>
-            <h3 className="text-xl font-extrabold font-heading text-[#49200B] mb-2">
+            <h3 className="text-lg sm:text-xl font-extrabold font-heading text-[#49200B] mb-1.5 sm:mb-2">
               Authorities Revoked
             </h3>
-            <p className="text-sm text-[#49200B]/90 font-semibold leading-relaxed">
+            <p className="text-xs sm:text-sm text-[#49200B]/90 font-semibold leading-relaxed">
               Mint and freeze authority are revoked at launch, so no new $DODO can be created and no wallet can be frozen. Check it on Solscan.
             </p>
           </div>
@@ -115,15 +115,15 @@ export const About: React.FC = () => {
           {/* Card 3: Graduates On-Chain */}
           <div
             onMouseEnter={() => sounds.pop()}
-            className="cartoon-card bg-[#7f7ca1] text-white rounded-3xl p-6 hover:-translate-y-1 hover:shadow-[4px_5px_0px_#49200B] transition-all duration-200 cursor-pointer group"
+            className="cartoon-card bg-[#a7a6e0] text-[#49200B] rounded-2xl sm:rounded-3xl p-4 sm:p-6 hover:-translate-y-1 hover:shadow-[4px_5px_0px_#49200B] transition-all duration-200 cursor-pointer group"
           >
-            <div className="w-12 h-12 rounded-2xl bg-white border-2 border-[#49200B] flex items-center justify-center text-2xl mb-4 shadow-[2px_2px_0px_#49200B] group-hover:scale-105 transition-transform">
-              <Globe2 className="w-6 h-6 text-[#7f7ca1]" />
+            <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-xl sm:rounded-2xl bg-white border-2 border-[#49200B] flex items-center justify-center text-xl sm:text-2xl mb-3 sm:mb-4 shadow-[2px_2px_0px_#49200B] group-hover:scale-105 transition-transform">
+              <Globe2 className="w-5 h-5 sm:w-6 sm:h-6 text-[#49200B]" />
             </div>
-            <h3 className="text-xl font-extrabold font-heading text-white mb-2 drop-shadow-[0_1px_1px_rgba(0,0,0,0.25)]">
+            <h3 className="text-lg sm:text-xl font-extrabold font-heading text-[#49200B] mb-1.5 sm:mb-2">
               Graduates On-Chain
             </h3>
-            <p className="text-sm text-indigo-100 font-semibold leading-relaxed">
+            <p className="text-xs sm:text-sm text-[#49200B]/90 font-semibold leading-relaxed">
               When the pump.fun bonding curve completes (around a $69k market cap), liquidity moves to a Solana DEX automatically.
             </p>
           </div>
@@ -131,15 +131,15 @@ export const About: React.FC = () => {
           {/* Card 4: Paws for a Cause */}
           <div
             onMouseEnter={() => sounds.pop()}
-            className="cartoon-card bg-[#987178] text-white rounded-3xl p-6 hover:-translate-y-1 hover:shadow-[4px_5px_0px_#49200B] transition-all duration-200 cursor-pointer group"
+            className="cartoon-card bg-[#d66879] text-white rounded-2xl sm:rounded-3xl p-4 sm:p-6 hover:-translate-y-1 hover:shadow-[4px_5px_0px_#49200B] transition-all duration-200 cursor-pointer group"
           >
-            <div className="w-12 h-12 rounded-2xl bg-white border-2 border-[#49200B] flex items-center justify-center text-2xl mb-4 shadow-[2px_2px_0px_#49200B] group-hover:scale-105 transition-transform">
-              <PawPrint className="w-6 h-6 text-[#987178]" />
+            <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-xl sm:rounded-2xl bg-white border-2 border-[#49200B] flex items-center justify-center text-xl sm:text-2xl mb-3 sm:mb-4 shadow-[2px_2px_0px_#49200B] group-hover:scale-105 transition-transform">
+              <PawPrint className="w-5 h-5 sm:w-6 sm:h-6 text-[#d66879]" />
             </div>
-            <h3 className="text-xl font-extrabold font-heading text-white mb-2 drop-shadow-[0_1px_1px_rgba(0,0,0,0.25)]">
+            <h3 className="text-lg sm:text-xl font-extrabold font-heading text-white mb-1.5 sm:mb-2 drop-shadow-[0_1px_1px_rgba(0,0,0,0.25)]">
               Paws for a Cause
             </h3>
-            <p className="text-sm text-rose-100 font-semibold leading-relaxed">
+            <p className="text-xs sm:text-sm text-rose-100 font-semibold leading-relaxed">
               1% of the supply is set aside for pet shelters and orphanages, starting in India. Holders vote on which shelters receive it.
             </p>
           </div>
