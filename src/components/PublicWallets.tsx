@@ -21,7 +21,7 @@ export const PublicWallets: React.FC = () => {
     {
       id: 'dev-1',
       name: 'CuteDodo Dev Wallet',
-      role: 'Core Dev & Infrastructure',
+      role: '3.0% Core Operations & Dev',
       address: 'HRE98kgFUGGz6d6HqjW8wRV7dfKwyNSsvnJ8AaEK4bxJ',
       type: 'dev',
       note: 'Platform infrastructure, RPC endpoints, domain hosting, and open-source tooling.',
@@ -31,7 +31,7 @@ export const PublicWallets: React.FC = () => {
     {
       id: 'charity-1',
       name: 'DoDo Charity Wallet',
-      role: '1% of total supply for pet shelters',
+      role: '1.0% Verified Charity & Impact Pool',
       address: 'ASNxk6W4NhkUtYwyqotmtLx4FzTcgNLhQEvN6mFcsAX4',
       type: 'charity',
       note: 'A public multi-sig charity wallet. Holders vote on shelters, every donation has Solscan receipts.',
@@ -162,9 +162,9 @@ export const PublicWallets: React.FC = () => {
           <div className="flex flex-wrap items-center justify-center gap-1.5 sm:gap-2 mt-4 sm:mt-6">
             {[
               { id: 'all', label: 'All Wallets (12)' },
-              { id: 'charity', label: 'Charity (1% Shelter)' },
-              { id: 'guardian', label: '10 Guardian Wallets' },
-              { id: 'dev', label: 'Dev & Infrastructure' },
+              { id: 'charity', label: 'Charity (1.0% Pool)' },
+              { id: 'guardian', label: '10 Guardian Wallets (16.0%)' },
+              { id: 'dev', label: 'Dev Operations (3.0%)' },
             ].map((t) => (
               <button
                 key={t.id}
