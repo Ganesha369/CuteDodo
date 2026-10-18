@@ -128,13 +128,13 @@ export const Footer: React.FC = () => {
             <ul className="space-y-2.5 text-xs sm:text-sm font-bold text-[#49200B]/80">
               <li>
                 <a
-                  href="https://pump.fun"
+                  href="https://pump.fun/coin/2e5bKRHpAixvgE6zUdTf7rigxCq662zq7xvN8Dympump"
                   target="_blank"
                   rel="noreferrer"
                   onClick={() => sounds.pop()}
                   className="hover:text-black hover:underline transition-colors flex items-center gap-1.5"
                 >
-                  <span>pump.fun</span>
+                  <span>pump.fun ($DODO)</span>
                   <ExternalLink className="w-3.5 h-3.5 text-[#49200B]" />
                 </a>
               </li>
@@ -146,31 +146,31 @@ export const Footer: React.FC = () => {
                   onClick={() => sounds.pop()}
                   className="hover:text-black hover:underline transition-colors flex items-center gap-1.5"
                 >
-                  <span>Jupiter</span>
+                  <span>Jupiter Swap</span>
                   <ExternalLink className="w-3.5 h-3.5 text-[#49200B]" />
                 </a>
               </li>
               <li>
                 <a
-                  href="https://dexscreener.com"
+                  href="https://dexscreener.com/solana/2e5bKRHpAixvgE6zUdTf7rigxCq662zq7xvN8Dympump"
                   target="_blank"
                   rel="noreferrer"
                   onClick={() => sounds.pop()}
                   className="hover:text-black hover:underline transition-colors flex items-center gap-1.5"
                 >
-                  <span>DexScreener</span>
+                  <span>DexScreener Chart</span>
                   <ExternalLink className="w-3.5 h-3.5 text-[#49200B]" />
                 </a>
               </li>
               <li>
                 <a
-                  href="https://solscan.io"
+                  href="https://solscan.io/token/2e5bKRHpAixvgE6zUdTf7rigxCq662zq7xvN8Dympump"
                   target="_blank"
                   rel="noreferrer"
                   onClick={() => sounds.pop()}
                   className="hover:text-black hover:underline transition-colors flex items-center gap-1.5"
                 >
-                  <span>Solscan</span>
+                  <span>Solscan Verified</span>
                   <ExternalLink className="w-3.5 h-3.5 text-[#49200B]" />
                 </a>
               </li>

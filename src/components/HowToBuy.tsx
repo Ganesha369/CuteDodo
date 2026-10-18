@@ -88,7 +88,7 @@ export const HowToBuy: React.FC = () => {
   const [copiedAddress, setCopiedAddress] = useState(false);
   const [swapStatusMessage, setSwapStatusMessage] = useState<string | null>(null);
 
-  const CA = 'Coming soon';
+  const CA = '2e5bKRHpAixvgE6zUdTf7rigxCq662zq7xvN8Dympump';
 
   // Approx calculated DODO rate based on hypothetical SOL price ($160) and $DODO launch valuation
   const estimatedDodo = solAmount && !isNaN(parseFloat(solAmount))
@@ -250,8 +250,8 @@ export const HowToBuy: React.FC = () => {
     },
     {
       step: '3',
-      title: 'Check the CA',
-      description: 'Only use the contract address shown on this site and our official channels. Copy it with the button at the top.',
+      title: 'Check the Verified CA',
+      description: 'Always use our official verified contract address (CA: 2e5bKRHp...pump). Copy it with one click below.',
       icon: '🔍',
     },
     {
@@ -359,6 +359,9 @@ export const HowToBuy: React.FC = () => {
 
                 {st.step === '3' && (
                   <div className="mt-3 sm:mt-4 pt-2.5 sm:pt-3 border-t border-[#49200B]/15">
+                    <div className="font-mono text-[10px] text-[#49200B] font-bold bg-white/90 border border-[#49200B]/30 rounded-lg px-2 py-1 mb-2 truncate text-center select-all" title={CA}>
+                      {CA}
+                    </div>
                     <button
                       onClick={handleCopyCA}
                       className="w-full cartoon-btn py-1.5 px-2 bg-white hover:bg-[#F7D9C7] text-xs font-bold font-heading text-[#49200B] rounded-xl flex items-center justify-center gap-1.5"
@@ -771,15 +774,34 @@ export const HowToBuy: React.FC = () => {
               </div>
             </div>
 
-            {/* Launch Banner / Status */}
-            <div className="p-4 bg-[#feac7d] border-2 border-[#49200B] rounded-2xl text-center mb-6 shadow-[2px_2px_0px_#49200B]">
+            {/* Official Token CA Banner */}
+            <div className="p-3.5 sm:p-4 bg-[#feac7d] border-2 border-[#49200B] rounded-2xl text-center mb-6 shadow-[2px_2px_0px_#49200B]">
               <div className="text-xl mb-1">🐶</div>
-              <h4 className="text-base font-bold font-heading text-[#49200B] mb-1">
-                $DODO is launching soon
+              <h4 className="text-sm sm:text-base font-bold font-heading text-[#49200B] mb-1">
+                Official Contract Address (CA)
               </h4>
-              <p className="text-xs text-[#79513B] leading-relaxed font-medium">
-                The swap box switches on automatically as soon as the token is live. Follow our channels so you don&apos;t miss the launch.
-              </p>
+              <div className="font-mono text-[11px] sm:text-xs font-bold text-[#49200B] break-all bg-white/90 p-2 rounded-xl border border-[#49200B]/30 mb-2.5 select-all shadow-inner">
+                {CA}
+              </div>
+              <div className="flex flex-wrap items-center justify-center gap-2">
+                <button
+                  onClick={handleCopyCA}
+                  className="cartoon-btn px-3 py-1.5 bg-[#FFD36A] hover:bg-[#ffc947] text-xs font-bold font-heading text-[#49200B] rounded-xl border border-[#49200B] flex items-center gap-1.5 shadow-[1px_1px_0px_#49200B]"
+                >
+                  {copiedCA ? <Check className="w-3.5 h-3.5 text-emerald-700" /> : <Copy className="w-3.5 h-3.5" />}
+                  <span>{copiedCA ? 'CA Copied!' : 'Copy CA'}</span>
+                </button>
+                <a
+                  href={`https://pump.fun/coin/${CA}`}
+                  target="_blank"
+                  rel="noreferrer"
+                  onClick={() => sounds.pop()}
+                  className="cartoon-btn px-3 py-1.5 bg-white hover:bg-amber-100 text-xs font-bold font-heading text-[#49200B] rounded-xl border border-[#49200B] flex items-center gap-1.5 shadow-[1px_1px_0px_#49200B]"
+                >
+                  <span>Trade on pump.fun</span>
+                  <ExternalLink className="w-3.5 h-3.5" />
+                </a>
+              </div>
             </div>
 
             {/* Primary Action Button / Connected Wallet State */}

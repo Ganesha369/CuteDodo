@@ -265,6 +265,26 @@ export const Tokenomics: React.FC = () => {
               </div>
             </div>
 
+            <div className="sm:col-span-2 lg:col-span-3 bg-white border-2 border-[#49200B] rounded-xl p-3 sm:p-4 shadow-[1.5px_1.5px_0px_#49200B] sm:shadow-[2px_2px_0px_#49200B] flex flex-col sm:flex-row sm:items-center justify-between gap-2.5">
+              <div className="min-w-0">
+                <div className="text-[10px] sm:text-xs font-bold font-heading text-[#79513B] uppercase tracking-wider mb-0.5 sm:mb-1">
+                  Official Contract Address (Solana SPL)
+                </div>
+                <div className="text-xs sm:text-sm font-mono font-bold text-[#49200B] break-all select-all">
+                  2e5bKRHpAixvgE6zUdTf7rigxCq662zq7xvN8Dympump
+                </div>
+              </div>
+              <button
+                onClick={() => {
+                  sounds.coin();
+                  navigator.clipboard?.writeText('2e5bKRHpAixvgE6zUdTf7rigxCq662zq7xvN8Dympump');
+                }}
+                className="cartoon-btn px-3 py-1.5 bg-[#FFD36A] hover:bg-[#ffc947] text-xs font-bold font-heading text-[#49200B] rounded-xl border border-[#49200B] shrink-0 self-start sm:self-auto flex items-center gap-1 shadow-[1px_1px_0px_#49200B]"
+              >
+                <span>Copy CA</span>
+              </button>
+            </div>
+
           </div>
 
           <p className="text-xs sm:text-sm text-[#79513B] font-medium leading-relaxed text-center sm:text-left">

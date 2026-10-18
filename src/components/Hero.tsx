@@ -18,13 +18,13 @@ export const Hero: React.FC<HeroProps> = ({ onOpenBuyModal }) => {
 
 
 
-  const contractAddress = 'Coming soon';
+  const contractAddress = '2e5bKRHpAixvgE6zUdTf7rigxCq662zq7xvN8Dympump';
 
   const handleCopy = () => {
     sounds.coin();
-    navigator.clipboard?.writeText('Coming soon');
+    navigator.clipboard?.writeText(contractAddress);
     setCopied(true);
-    setSpeechBubbleText('Token CA is coming soon at launch! Join Telegram & X! 🎉');
+    setSpeechBubbleText('Official CA copied! Ready to paste in Phantom or pump.fun! 🐾🪙');
     setTimeout(() => setCopied(false), 2400);
   };
 
@@ -133,7 +133,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenBuyModal }) => {
                   style={{ backgroundColor: '#ffcb3f' }}
                   className="text-[10px] sm:text-xs font-bold font-heading px-2 py-0.5 border border-[#49200B] rounded-md text-[#49200B]"
                 >
-                  Coming Soon
+                  Verified CA
                 </span>
               </div>
               <div className="flex items-center gap-2">
