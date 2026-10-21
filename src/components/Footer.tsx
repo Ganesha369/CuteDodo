@@ -95,7 +95,7 @@ export const Footer: React.FC = () => {
               </li>
               <li>
                 <a
-                  href="https://x.com/CuteDODO_18"
+                  href="https://x.com/CuteDODO_018"
                   target="_blank"
                   rel="noreferrer"
                   onClick={() => sounds.pop()}

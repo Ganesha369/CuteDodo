@@ -7,7 +7,7 @@ export const Community: React.FC = () => {
     {
       id: '1',
       author: 'CuteDoDo Official',
-      handle: '@CuteDoDoToken',
+      handle: '@CuteDODO_018',
       time: '2h ago',
       content: 'Grandma just poured Dodo his morning milk while reading the Solana charts! 🐶🥛 Remember: 0% marketing tokens, 1% strictly for pet shelters. We build for real dogs! 🐾',
       likes: '1,420',
@@ -16,7 +16,7 @@ export const Community: React.FC = () => {
     {
       id: '2',
       author: 'CuteDoDo Official',
-      handle: '@CuteDoDoToken',
+      handle: '@CuteDODO_018',
       time: '6h ago',
       content: 'Did you know Dodo will never let go of his bone? That is our exact policy for the Guardian Wallets: NEVER SELL. Pure loyalty and protection! 🦴✨',
       likes: '954',
@@ -25,7 +25,7 @@ export const Community: React.FC = () => {
     {
       id: '3',
       author: 'CuteDoDo Official',
-      handle: '@CuteDoDoToken',
+      handle: '@CuteDODO_018',
       time: '1d ago',
       content: 'First shelter milestone is Chennai, Tamil Nadu at $100k market cap! Fresh food & water bowls for thirsty strays in the summer heat. Receipts posted on Solscan! 🥣💧',
       likes: '2,810',
@@ -81,7 +81,7 @@ export const Community: React.FC = () => {
           </a>
 
           <a
-            href="https://x.com/CuteDODO_18"
+            href="https://x.com/CuteDODO_018"
             target="_blank"
             rel="noreferrer"
             onClick={() => sounds.pop()}
@@ -102,7 +102,7 @@ export const Community: React.FC = () => {
               </p>
             </div>
             <div className="mt-4 sm:mt-6 w-full py-2 sm:py-2.5 rounded-xl bg-[#FFD36A] border-2 border-[#49200B] font-bold font-heading text-xs text-[#49200B] flex items-center justify-center gap-1 shadow-[1.5px_1.5px_0px_#49200B] sm:shadow-[2px_2px_0px_#49200B]">
-              <span>Follow @CuteDoDo</span>
+              <span>Follow @CuteDODO_018</span>
               <ExternalLink className="w-3.5 h-3.5" />
             </div>
           </a>
@@ -136,25 +136,25 @@ export const Community: React.FC = () => {
 
         </div>
 
-        {/* Latest from @CuteDoDoToken Feed */}
+        {/* Latest from @CuteDODO_018 Feed */}
         <div className="cartoon-card bg-[#FFF9F0] rounded-2xl sm:rounded-3xl p-4 sm:p-8">
           <div className="flex flex-wrap items-center justify-between gap-3 mb-6 pb-4 border-b border-[#49200B]/15">
             <div>
               <h3 className="text-2xl font-bold font-heading text-[#49200B]">
-                Latest from @CuteDoDoToken
+                Latest from @CuteDODO_018
               </h3>
               <p className="text-xs sm:text-sm text-[#79513B] font-medium">
                 See the latest posts and community drops on X.
               </p>
             </div>
             <a
-              href="https://twitter.com/CuteDoDoToken"
+              href="https://x.com/CuteDODO_018"
               target="_blank"
               rel="noreferrer"
               onClick={() => sounds.pop()}
               className="cartoon-btn px-4 py-2 bg-[#FFD36A] hover:bg-[#ffc947] text-[#49200B] font-bold font-heading text-xs sm:text-sm rounded-xl flex items-center gap-1.5"
             >
-              <span>Open @CuteDoDoToken</span>
+              <span>Open @CuteDODO_018</span>
               <ExternalLink className="w-4 h-4" />
             </a>
           </div>

@@ -242,7 +242,7 @@ export const Playroom: React.FC = () => {
             </button>
             {memeSavedNotice && (
               <p className="text-[11px] font-bold text-emerald-800 text-center mt-2 animate-bounce">
-                🐾 Meme caption copied! Paste on X (@CuteDoDoToken) or Telegram!
+                🐾 Meme caption copied! Paste on X (@CuteDODO_018) or Telegram!
               </p>
             )}
           </div>
