@@ -86,7 +86,7 @@ export const Navbar: React.FC<NavbarProps> = ({
             </button>
 
             <a
-              href="https://pump.fun/coin/2e5bKRHpAixvgE6zUdTf7rigxCq662zq7xvN8Dympump"
+              href="https://swap.pump.fun/?input=So11111111111111111111111111111111111111112&output=2e5bKRHpAixvgE6zUdTf7rigxCq662zq7xvN8Dympump"
               target="_blank"
               rel="noopener noreferrer"
               onClick={() => sounds.coin()}

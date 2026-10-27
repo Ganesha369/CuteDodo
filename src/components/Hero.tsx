@@ -167,7 +167,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenBuyModal, onOpenWhitepaper }) 
             {/* Action Buttons */}
             <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-center lg:justify-start gap-2.5 sm:gap-4 mb-5 sm:mb-6">
               <a
-                href="https://pump.fun/coin/2e5bKRHpAixvgE6zUdTf7rigxCq662zq7xvN8Dympump"
+                href="https://swap.pump.fun/?input=So11111111111111111111111111111111111111112&output=2e5bKRHpAixvgE6zUdTf7rigxCq662zq7xvN8Dympump"
                 target="_blank"
                 rel="noopener noreferrer"
                 onClick={() => sounds.coin()}
