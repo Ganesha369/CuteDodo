@@ -16,11 +16,13 @@ import { FAQ } from './components/FAQ';
 import { Footer } from './components/Footer';
 import { InteractiveMouseTrail } from './components/InteractiveMouseTrail';
 import { CartoonScrollProgressDog } from './components/CartoonScrollProgressDog';
+import { WhitepaperModal } from './components/WhitepaperModal';
 import { sounds } from './utils/soundEffects';
 import { Sparkles, Heart } from 'lucide-react';
 
 export default function App() {
   const [soundEnabled, setSoundEnabled] = useState(true);
+  const [showWhitepaper, setShowWhitepaper] = useState(false);
   const [activeView, setActiveView] = useState<'all' | 'scenes' | 'story' | 'tokenomics' | 'charity' | 'wallets' | 'playroom'>('all');
   const [floatingToast, setFloatingToast] = useState<string | null>(null);
 
@@ -39,6 +41,7 @@ export default function App() {
       <Navbar
         soundEnabled={soundEnabled}
         setSoundEnabled={setSoundEnabled}
+        onOpenWhitepaper={() => setShowWhitepaper(true)}
         onOpenBuyModal={() => {
           const el = document.getElementById('buy');
           el?.scrollIntoView({ behavior: 'smooth' });
@@ -388,6 +391,12 @@ export default function App() {
 
       {/* Footer */}
       <Footer />
+
+      {/* Official Whitepaper PDF Viewer Modal */}
+      <WhitepaperModal
+        isOpen={showWhitepaper}
+        onClose={() => setShowWhitepaper(false)}
+      />
 
       {/* Interactive Mouse Pointer Trail & Cartoon Click Ripples across the landing page */}
       <InteractiveMouseTrail />

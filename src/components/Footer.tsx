@@ -72,6 +72,18 @@ export const Footer: React.FC = () => {
                   Roadmap
                 </a>
               </li>
+              <li>
+                <a
+                  href="/assets/aistudio/CuteDoDo-Whitepaper-v1.2-1_f0065eee.pdf"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  onClick={() => sounds.pop()}
+                  className="hover:text-black hover:underline transition-colors flex items-center gap-1 font-black text-[#49200B]"
+                >
+                  <span>Whitepaper (v1.2 PDF)</span>
+                  <ExternalLink className="w-3 h-3 text-[#49200B]" />
+                </a>
+              </li>
             </ul>
           </div>
 

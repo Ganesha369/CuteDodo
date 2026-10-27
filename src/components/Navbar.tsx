@@ -1,27 +1,22 @@
 import React, { useState } from 'react';
-import { Volume2, VolumeX, Sparkles } from 'lucide-react';
+import { Sparkles, FileText } from 'lucide-react';
 import { sounds } from '../utils/soundEffects';
 import { HeaderDodo } from './HeaderDodo';
 
 interface NavbarProps {
   onOpenBuyModal?: () => void;
-  soundEnabled: boolean;
-  setSoundEnabled: (v: boolean) => void;
+  onOpenWhitepaper?: () => void;
+  soundEnabled?: boolean;
+  setSoundEnabled?: (v: boolean) => void;
 }
 
 export const Navbar: React.FC<NavbarProps> = ({
   onOpenBuyModal,
+  onOpenWhitepaper,
   soundEnabled,
   setSoundEnabled,
 }) => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-
-  const toggleSound = () => {
-    const next = !soundEnabled;
-    setSoundEnabled(next);
-    sounds.enabled = next;
-    if (next) sounds.bell();
-  };
 
   const navLinks = [
     { label: 'About Dodo', href: '#about' },
@@ -76,24 +71,18 @@ export const Navbar: React.FC<NavbarProps> = ({
             ))}
           </nav>
 
-          {/* Zone 3: Primary CTA + Restyled Sound control */}
+          {/* Zone 3: Primary CTA + Whitepaper Modal Button */}
           <div className="flex items-center gap-2 sm:gap-3 shrink-0">
             <button
-              onClick={toggleSound}
-              title={soundEnabled ? 'Mute cartoon sounds' : 'Enable cartoon sounds'}
-              className="p-2 sm:px-3 sm:py-2 text-xs font-bold rounded-xl bg-[#FFF9F0] hover:bg-[#F7D9C7] border-2 border-[#49200B] text-[#49200B] flex items-center gap-1.5 shadow-[2px_2px_0px_#49200B] active:translate-y-0.5 transition-all"
+              onClick={() => {
+                sounds.pop();
+                if (onOpenWhitepaper) onOpenWhitepaper();
+              }}
+              title="Read CuteDoDo Official Whitepaper v1.2"
+              className="px-3 sm:px-3.5 py-2 text-xs font-bold rounded-xl bg-[#FFF9F0] hover:bg-[#F7D9C7] border-2 border-[#49200B] text-[#49200B] flex items-center gap-1.5 shadow-[2px_2px_0px_#49200B] active:translate-y-0.5 transition-all group"
             >
-              {soundEnabled ? (
-                <>
-                  <Volume2 className="w-4 h-4 text-[#FF9F00]" />
-                  <span className="hidden sm:inline">Sound ON</span>
-                </>
-              ) : (
-                <>
-                  <VolumeX className="w-4 h-4 text-[#79513B]/60" />
-                  <span className="hidden sm:inline">Muted</span>
-                </>
-              )}
+              <FileText className="w-4 h-4 text-[#FF9F00] group-hover:scale-110 transition-transform" />
+              <span className="font-heading tracking-wide">Whitepaper</span>
             </button>
 
             <a
@@ -142,6 +131,17 @@ export const Navbar: React.FC<NavbarProps> = ({
                 {item.label}
               </a>
             ))}
+            <button
+              onClick={() => {
+                sounds.pop();
+                setMobileMenuOpen(false);
+                if (onOpenWhitepaper) onOpenWhitepaper();
+              }}
+              className="col-span-2 p-2.5 rounded-xl bg-[#FFD36A]/40 hover:bg-[#FFD36A] text-[#49200B] font-heading font-black border-2 border-[#49200B] flex items-center justify-center gap-2 shadow-[1.5px_1.5px_0px_#49200B] transition-all"
+            >
+              <FileText className="w-4 h-4 text-[#49200B]" />
+              <span>📄 View Official Whitepaper v1.2</span>
+            </button>
           </div>
         )}
       </div>
