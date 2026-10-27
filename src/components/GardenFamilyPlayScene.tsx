@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Sparkles, Heart, Sun, Wind, Play, Pause } from 'lucide-react';
+import { Sparkles, Heart, Sun, Wind, Play, Pause, Volume2, VolumeX } from 'lucide-react';
 import { sounds } from '../utils/soundEffects';
 
 type GardenPlayAction = 'frisbee' | 'ball' | 'bubbles' | 'treat' | 'bellyrub';
@@ -13,15 +13,17 @@ interface BubbleItem {
 }
 
 export const GardenFamilyPlayScene: React.FC = () => {
-  const [isPlaying, setIsPlaying] = useState<boolean>(true);
+  // Always paused and sound OFF until user clicks Play
+  const [isPlaying, setIsPlaying] = useState<boolean>(false);
+  const [soundEnabled, setSoundEnabled] = useState<boolean>(false);
   const [currentAction, setCurrentAction] = useState<GardenPlayAction>('frisbee');
-  const [toyPhase, setToyPhase] = useState<'throw' | 'fly' | 'caught'>('fly');
+  const [toyPhase, setToyPhase] = useState<'throw' | 'fly' | 'caught'>('throw');
   const [bubbles, setBubbles] = useState<BubbleItem[]>([]);
-  const [caption, setCaption] = useState('Game active! Arjun throws the red frisbee across the lawn — Dodo leaps to catch it! 🥏');
+  const [caption, setCaption] = useState('Game paused · Sound OFF ⏸️ Click Play to launch frisbees & catch with Dodo!');
   const [breezeActive, setBreezeActive] = useState(false);
   const [caughtCount, setCaughtCount] = useState(14);
 
-  // Play loop for dynamic catch cycle
+  // Play loop for dynamic catch cycle - only active when user explicitly clicks Play
   useEffect(() => {
     if (!isPlaying) {
       setToyPhase('throw');
@@ -42,13 +44,17 @@ export const GardenFamilyPlayScene: React.FC = () => {
       
       t1 = setTimeout(() => {
         setToyPhase('fly');
-        sounds.whoosh();
+        if (soundEnabled && isPlaying) {
+          sounds.whoosh();
+        }
       }, 500);
 
       t2 = setTimeout(() => {
         setToyPhase('caught');
-        sounds.bark();
-        sounds.bell();
+        if (soundEnabled && isPlaying) {
+          sounds.bark();
+          sounds.bell();
+        }
         setCaughtCount((c) => c + 1);
       }, 1900);
     };
@@ -61,7 +67,7 @@ export const GardenFamilyPlayScene: React.FC = () => {
       clearTimeout(t2);
       clearInterval(interval);
     };
-  }, [isPlaying, currentAction]);
+  }, [isPlaying, soundEnabled, currentAction]);
 
   // Initial peaceful bubbles cluster
   useEffect(() => {
@@ -76,7 +82,7 @@ export const GardenFamilyPlayScene: React.FC = () => {
   }, []);
 
   const popBubble = (id: number) => {
-    sounds.pop();
+    if (soundEnabled && isPlaying) sounds.pop();
     setBubbles((prev) => prev.filter((b) => b.id !== id));
     setTimeout(() => {
       setBubbles((prev) => [
@@ -93,9 +99,10 @@ export const GardenFamilyPlayScene: React.FC = () => {
   };
 
   const togglePlay = () => {
-    sounds.pop();
     if (!isPlaying) {
       setIsPlaying(true);
+      setSoundEnabled(true);
+      sounds.pop();
       setCaption(
         currentAction === 'frisbee'
           ? 'Game running! Arjun launches the red frisbee — watch CuteDODO make an epic leap! 🥏'
@@ -105,7 +112,8 @@ export const GardenFamilyPlayScene: React.FC = () => {
       );
     } else {
       setIsPlaying(false);
-      setCaption('Game paused ⏸️ Click the Play button whenever you want Dodo and Arjun to play again!');
+      setSoundEnabled(false);
+      setCaption('Game paused · Sound OFF ⏸️ Click Play whenever you want Dodo and Arjun to play again!');
     }
   };
 
@@ -113,38 +121,38 @@ export const GardenFamilyPlayScene: React.FC = () => {
     setCurrentAction(action);
     switch (action) {
       case 'frisbee':
-        if (isPlaying) sounds.whoosh();
+        if (soundEnabled && isPlaying) sounds.whoosh();
         setCaption(
           isPlaying
             ? 'Arjun throws the frisbee across the garden — Dodo is in hot pursuit! 🥏'
-            : 'Frisbee selected! Press Play to start catching! 🥏'
+            : 'Frisbee selected! Press Play to start catching (Sound ON)! 🥏'
         );
         break;
       case 'ball':
-        if (isPlaying) sounds.boing();
+        if (soundEnabled && isPlaying) sounds.boing();
         setCaption(
           isPlaying
             ? 'Tossing the bouncy tennis ball! Look at those happy paws sprinting! 🎾'
-            : 'Tennis ball selected! Press Play to start fetching! 🎾'
+            : 'Tennis ball selected! Press Play to start fetching (Sound ON)! 🎾'
         );
         break;
       case 'bubbles':
-        sounds.pop();
+        if (soundEnabled && isPlaying) sounds.pop();
         setCaption('Little Meera is blowing shimmering soap bubbles! Tap them to pop! 🫧');
         break;
       case 'treat':
-        sounds.bell();
+        if (soundEnabled && isPlaying) sounds.bell();
         setCaption('Mom opens the golden treat tin — Dodo does his famous begging sit! 🦴✨');
         break;
       case 'bellyrub':
-        sounds.giggle();
+        if (soundEnabled && isPlaying) sounds.giggle();
         setCaption('Dad gives gentle tummy scratches under the mango tree — pure bliss! ❤️');
         break;
     }
   };
 
   const toggleBreeze = () => {
-    sounds.whoosh();
+    if (soundEnabled && isPlaying) sounds.whoosh();
     setBreezeActive(!breezeActive);
   };
 
@@ -578,8 +586,10 @@ export const GardenFamilyPlayScene: React.FC = () => {
               : 'none',
         }}
         onClick={() => {
-          sounds.bark();
-          sounds.bell();
+          if (soundEnabled && isPlaying) {
+            sounds.bark();
+            sounds.bell();
+          }
           setCaughtCount((c) => c + 1);
         }}
         title="Click CuteDODO to hear a happy bark!"
@@ -664,6 +674,20 @@ export const GardenFamilyPlayScene: React.FC = () => {
         </div>
       </div>
 
+      {/* Centered Play Prompt Badge when game is paused */}
+      {!isPlaying && (
+        <div className="absolute inset-0 flex items-center justify-center z-30 pointer-events-none">
+          <button
+            onClick={togglePlay}
+            className="pointer-events-auto cartoon-btn px-4 py-2 sm:px-6 sm:py-2.5 bg-emerald-500 hover:bg-emerald-400 text-white font-black font-heading text-xs sm:text-sm rounded-2xl border-2 border-amber-950 shadow-[3px_4px_0px_#3d2314] flex items-center gap-2 animate-bounce active:scale-95 transition-all"
+            title="Click to play game and enable sound"
+          >
+            <Play className="w-4 h-4 fill-current" />
+            <span>Play Game &amp; Turn Sound ON</span>
+          </button>
+        </div>
+      )}
+
       {/* ============================================================ */}
       {/* 8. TOP HUD: ACTION CONTROLS & STATUS BAR                     */}
       {/* ============================================================ */}
@@ -676,7 +700,7 @@ export const GardenFamilyPlayScene: React.FC = () => {
               ? 'bg-amber-400 hover:bg-amber-500 text-amber-950'
               : 'bg-emerald-500 hover:bg-emerald-400 text-white animate-pulse'
           }`}
-          title={isPlaying ? "Pause game" : "Play game"}
+          title={isPlaying ? "Pause game" : "Play game (Sound ON)"}
         >
           {isPlaying ? (
             <>
@@ -686,7 +710,34 @@ export const GardenFamilyPlayScene: React.FC = () => {
           ) : (
             <>
               <Play className="w-3.5 h-3.5 fill-current" />
-              <span>Play</span>
+              <span>Play Game</span>
+            </>
+          )}
+        </button>
+
+        {/* Audio Mute/Unmute quick toggle */}
+        <button
+          onClick={() => {
+            const next = !soundEnabled;
+            setSoundEnabled(next);
+            if (next && isPlaying) sounds.pop();
+          }}
+          className={`cartoon-btn flex items-center gap-1 px-2 py-1 rounded-xl text-[11px] font-bold border-2 border-amber-950 transition-all shadow-[1.5px_1.5px_0px_#3d2314] ${
+            soundEnabled && isPlaying
+              ? 'bg-amber-300 text-amber-950'
+              : 'bg-white/95 text-zinc-600'
+          }`}
+          title={soundEnabled && isPlaying ? "Mute garden sounds" : "Enable garden sounds"}
+        >
+          {soundEnabled && isPlaying ? (
+            <>
+              <Volume2 className="w-3.5 h-3.5 text-amber-950" />
+              <span className="hidden sm:inline">Sound ON</span>
+            </>
+          ) : (
+            <>
+              <VolumeX className="w-3.5 h-3.5 text-zinc-500" />
+              <span className="hidden sm:inline">Sound OFF</span>
             </>
           )}
         </button>
