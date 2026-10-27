@@ -5,6 +5,7 @@ import { ForestDriveScene } from './ForestDriveScene';
 import { GardenFamilyPlayScene } from './GardenFamilyPlayScene';
 import { CartoonDogWalkMarquee } from './CartoonDogWalkMarquee';
 import { MarqueeBanner } from './MarqueeBanner';
+import { LiveMarketData } from './LiveMarketData';
 
 interface HeroProps {
   onOpenBuyModal?: () => void;
@@ -12,7 +13,6 @@ interface HeroProps {
 
 export const Hero: React.FC<HeroProps> = ({ onOpenBuyModal }) => {
   const [copied, setCopied] = useState(false);
-  const [liveMode, setLiveMode] = useState(false);
   const [mascotMood, setMascotMood] = useState<'happy' | 'barking' | 'eating'>('happy');
   const [speechBubbleText, setSpeechBubbleText] = useState('Woof! Welcome to my pack! 🐾');
 
@@ -299,73 +299,8 @@ export const Hero: React.FC<HeroProps> = ({ onOpenBuyModal }) => {
           <GardenFamilyPlayScene />
         </div>
 
-        {/* Live Market Data Card Strip */}
-        <div className="cartoon-card bg-[#FFF9F0] rounded-3xl p-5 sm:p-6 mb-12">
-          <div className="flex flex-wrap items-center justify-between gap-3 mb-4 pb-3 border-b border-[#49200B]/15">
-            <div className="flex items-center gap-2">
-              <span className="text-xl" role="img" aria-label="chart">📈</span>
-              <h2 className="text-lg sm:text-xl font-bold font-heading text-[#49200B]">
-                Live Solana Market Data
-              </h2>
-            </div>
-            <div className="flex items-center gap-3">
-              <span className="text-xs font-medium text-[#79513B] hidden sm:inline">
-                Live market data appears here automatically once $DODO is launched.
-              </span>
-              <button
-                onClick={() => {
-                  sounds.pop();
-                  setLiveMode(!liveMode);
-                }}
-                className="text-xs font-bold font-heading px-3 py-1.5 bg-[#FFD36A] hover:bg-[#ffc947] border-2 border-[#49200B] rounded-xl shadow-[2px_2px_0px_#49200B] active:translate-y-0.5 transition-all text-[#49200B]"
-              >
-                {liveMode ? 'Mode: Live Sim' : 'Mode: Pre-Launch'}
-              </button>
-            </div>
-          </div>
-
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-            <div className="bg-white border-2 border-[#49200B] rounded-2xl p-4 shadow-[2px_2px_0px_#49200B]">
-              <div className="text-xs font-bold font-heading text-[#79513B] uppercase tracking-wide mb-1">Price (USD)</div>
-              <div className="text-xl sm:text-2xl font-bold font-mono text-[#49200B]">
-                {liveMode ? '$0.0000692' : 'Soon'}
-              </div>
-              <div className="text-[11px] text-[#FF9F00] font-semibold mt-1">
-                {liveMode ? '🟢 +14.2% (1h)' : 'pump.fun launch'}
-              </div>
-            </div>
-
-            <div className="bg-white border-2 border-[#49200B] rounded-2xl p-4 shadow-[2px_2px_0px_#49200B]">
-              <div className="text-xs font-bold font-heading text-[#79513B] uppercase tracking-wide mb-1">Market Cap</div>
-              <div className="text-xl sm:text-2xl font-bold font-mono text-[#49200B]">
-                {liveMode ? '$69,200' : 'Soon'}
-              </div>
-              <div className="text-[11px] text-[#FF9F00] font-semibold mt-1">
-                {liveMode ? 'Bonding curve: 98%' : 'Fair Launch Curve'}
-              </div>
-            </div>
-
-            <div className="bg-white border-2 border-[#49200B] rounded-2xl p-4 shadow-[2px_2px_0px_#49200B]">
-              <div className="text-xs font-bold font-heading text-[#79513B] uppercase tracking-wide mb-1">Liquidity</div>
-              <div className="text-xl sm:text-2xl font-bold font-mono text-[#49200B]">
-                {liveMode ? '$28,450' : 'Soon'}
-              </div>
-              <div className="text-[11px] text-[#FF9F00] font-semibold mt-1">
-                {liveMode ? 'Raydium Migration' : 'Auto LP on DEX'}
-              </div>
-            </div>
-
-            <div className="bg-white border-2 border-[#49200B] rounded-2xl p-4 shadow-[2px_2px_0px_#49200B]">
-              <div className="text-xs font-bold font-heading text-[#79513B] uppercase tracking-wide mb-1">24h Volume</div>
-              <div className="text-xl sm:text-2xl font-bold font-mono text-[#49200B]">
-                {liveMode ? '$142,800' : 'Soon'}
-              </div>
-              <div className="text-[11px] text-[#FF9F00] font-semibold mt-1">
-                {liveMode ? '3,842 trades' : 'Tracking upon launch'}
-              </div>
-            </div>
-          </div>
-        </div>
+        {/* Live Market Data & Real-Time Coin Chart (DexScreener API & Embed) */}
+        <LiveMarketData />
 
         {/* 4 Pillars Grid (Bold vibrant cartoon card design with high-contrast readable text) */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
