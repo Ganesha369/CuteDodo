@@ -130,17 +130,17 @@ export const LiveMarketData: React.FC = () => {
   };
 
   return (
-    <div className="cartoon-card bg-[#FFF9F0] rounded-3xl p-4 sm:p-6 mb-12 border-2 border-[#49200B] shadow-[4px_4px_0px_#49200B]">
+    <div className="cartoon-card bg-[#00315d] rounded-3xl p-4 sm:p-6 mb-12 border-2 border-[#49200B] shadow-[4px_4px_0px_#49200B]">
       
       {/* Top Header Bar with Live Indicator & Actions */}
-      <div className="flex flex-wrap items-center justify-between gap-3 mb-5 pb-4 border-b-2 border-[#49200B]/15">
+      <div className="flex flex-wrap items-center justify-between gap-3 mb-5 pb-4 border-b-2 border-white/15">
         <div className="flex items-center gap-2.5">
-          <div className="w-9 h-9 rounded-xl bg-[#FFD36A] border-2 border-[#49200B] flex items-center justify-center text-lg shadow-[2px_2px_0px_#49200B]">
+          <div className="w-9 h-9 rounded-xl bg-[#ffd56a] text-[#490b0b] border-2 border-[#49200B] flex items-center justify-center text-lg shadow-[2px_2px_0px_#49200B]">
             📈
           </div>
           <div>
             <div className="flex items-center gap-2">
-              <h2 className="text-lg sm:text-xl font-bold font-heading text-[#49200B]">
+              <h2 className="text-lg sm:text-xl font-bold font-heading text-[#ffc549]">
                 Live Solana Market Data
               </h2>
               {/* Pulsing Live indicator */}
@@ -152,7 +152,7 @@ export const LiveMarketData: React.FC = () => {
                 LIVE · PUMPSWAP
               </span>
             </div>
-            <p className="text-[11px] font-semibold text-[#79513B] mt-0.5">
+            <p className="text-[11px] font-semibold text-[#ffa979] mt-0.5">
               Real-time on-chain metrics from PumpSwap &amp; DexScreener
             </p>
           </div>
@@ -187,7 +187,7 @@ export const LiveMarketData: React.FC = () => {
       <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4 mb-6">
         
         {/* Card 1: Price USD & Native */}
-        <div className="bg-white border-2 border-[#49200B] rounded-2xl p-3.5 sm:p-4 shadow-[2.5px_2.5px_0px_#49200B] flex flex-col justify-between">
+        <div className="bg-[#F9EBDE] border-2 border-[#49200B] rounded-2xl p-3.5 sm:p-4 shadow-[2.5px_2.5px_0px_#49200B] flex flex-col justify-between">
           <div>
             <div className="flex items-center justify-between text-xs font-bold font-heading text-[#79513B] uppercase tracking-wide mb-1">
               <span>Price (USD)</span>
@@ -209,7 +209,7 @@ export const LiveMarketData: React.FC = () => {
         </div>
 
         {/* Card 2: Market Cap & FDV */}
-        <div className="bg-white border-2 border-[#49200B] rounded-2xl p-3.5 sm:p-4 shadow-[2.5px_2.5px_0px_#49200B] flex flex-col justify-between">
+        <div className="bg-[#F9EBDE] border-2 border-[#49200B] rounded-2xl p-3.5 sm:p-4 shadow-[2.5px_2.5px_0px_#49200B] flex flex-col justify-between">
           <div>
             <div className="flex items-center justify-between text-xs font-bold font-heading text-[#79513B] uppercase tracking-wide mb-1">
               <span>Market Cap</span>
@@ -228,7 +228,7 @@ export const LiveMarketData: React.FC = () => {
         </div>
 
         {/* Card 3: Liquidity Pool */}
-        <div className="bg-white border-2 border-[#49200B] rounded-2xl p-3.5 sm:p-4 shadow-[2.5px_2.5px_0px_#49200B] flex flex-col justify-between">
+        <div className="bg-[#F9EBDE] border-2 border-[#49200B] rounded-2xl p-3.5 sm:p-4 shadow-[2.5px_2.5px_0px_#49200B] flex flex-col justify-between">
           <div>
             <div className="flex items-center justify-between text-xs font-bold font-heading text-[#79513B] uppercase tracking-wide mb-1">
               <span>Liquidity Pool</span>
@@ -249,7 +249,7 @@ export const LiveMarketData: React.FC = () => {
         </div>
 
         {/* Card 4: 24h Volume & Trades */}
-        <div className="bg-white border-2 border-[#49200B] rounded-2xl p-3.5 sm:p-4 shadow-[2.5px_2.5px_0px_#49200B] flex flex-col justify-between">
+        <div className="bg-[#F9EBDE] border-2 border-[#49200B] rounded-2xl p-3.5 sm:p-4 shadow-[2.5px_2.5px_0px_#49200B] flex flex-col justify-between">
           <div>
             <div className="flex items-center justify-between text-xs font-bold font-heading text-[#79513B] uppercase tracking-wide mb-1">
               <span>24h Volume</span>
@@ -279,7 +279,7 @@ export const LiveMarketData: React.FC = () => {
       </div>
 
       {/* Small Chart of the Coin Section */}
-      <div className="bg-white border-2 border-[#49200B] rounded-2xl p-3.5 sm:p-5 shadow-[3px_3px_0px_#49200B]">
+      <div className="bg-[#ADEFD1] border-2 border-[#49200B] rounded-2xl p-3.5 sm:p-5 shadow-[3px_3px_0px_#49200B]">
         
         {/* Chart Header Bar */}
         <div className="flex flex-wrap items-center justify-between gap-3 mb-3.5 pb-3 border-b border-[#49200B]/10">
@@ -353,9 +353,9 @@ export const LiveMarketData: React.FC = () => {
                 className="w-full h-[340px] sm:h-[380px] border-0"
                 loading="lazy"
               />
-              <div className="p-2 bg-[#FFF9F0] border-t border-[#49200B]/15 flex flex-wrap items-center justify-between text-[11px] font-semibold text-[#79513B]">
-                <div className="flex items-center gap-2">
-                  <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+              <div className="p-2 bg-[#ffba49] border-t border-[#49200B]/15 flex flex-wrap items-center justify-between text-[11px] font-semibold text-[#49200B]">
+                <div className="flex items-center gap-2 bg-[#ffba49]">
+                  <span className="w-2 h-2 rounded-full bg-emerald-600 animate-pulse"></span>
                   <span>Streaming directly from PumpSwap Solana DEX pool</span>
                 </div>
                 <a
