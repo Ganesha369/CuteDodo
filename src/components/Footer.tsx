@@ -3,7 +3,11 @@ import { Heart, ExternalLink } from 'lucide-react';
 import { sounds } from '../utils/soundEffects';
 import { FooterWalkingDog } from './FooterWalkingDog';
 
-export const Footer: React.FC = () => {
+interface FooterProps {
+  onOpenWhitepaper?: () => void;
+}
+
+export const Footer: React.FC<FooterProps> = ({ onOpenWhitepaper }) => {
   return (
     <footer className="bg-[#B7F34A] text-[#49200B] pt-16 pb-24 border-t-4 border-[#49200B] relative">
       {/* Animated Shih Tzu Dog Walking on Top Edge of Footer (reference image) */}
@@ -26,7 +30,7 @@ export const Footer: React.FC = () => {
             </div>
 
             <p className="text-sm text-[#49200B]/90 font-medium leading-relaxed max-w-sm">
-              Paws over Profits 🐾 A Solana community meme token inspired by Dodo the CuteDODO, with 1% of supply set aside for registered pet shelters and stray dog relief.
+              Paws over Profits 🐾 A Solana community meme token inspired by Dodo the CuteDODO, with 1.15% of supply set aside for registered pet shelters and stray dog relief.
             </p>
 
             <div className="flex items-center gap-2 pt-2">
@@ -74,10 +78,16 @@ export const Footer: React.FC = () => {
               </li>
               <li>
                 <a
-                  href="/assets/aistudio/CuteDoDo-Whitepaper-v1.2-1_f0065eee.pdf"
+                  href="/assets/aistudio/CuteDoDo-Whitepaper-v1_2-updated_85c6c1de.pdf"
                   target="_blank"
                   rel="noopener noreferrer"
-                  onClick={() => sounds.pop()}
+                  onClick={(e) => {
+                    sounds.pop();
+                    if (onOpenWhitepaper) {
+                      e.preventDefault();
+                      onOpenWhitepaper();
+                    }
+                  }}
                   className="hover:text-black hover:underline transition-colors flex items-center gap-1 font-black text-[#49200B]"
                 >
                   <span>Whitepaper (v1.2 PDF)</span>

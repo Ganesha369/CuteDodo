@@ -101,7 +101,7 @@ export default function App() {
           <>
             {/* Section 1: Hero */}
             <div id="section-hero" className="relative w-full bg-[#FFF9F0] overflow-hidden">
-              <Hero />
+              <Hero onOpenWhitepaper={() => setShowWhitepaper(true)} />
             </div>
 
             {/* Marquee Separator 1 */}
@@ -328,7 +328,7 @@ export default function App() {
 
         {activeView === 'story' && (
           <div className="pt-2 space-y-0">
-            <div className="bg-[#FFF9F0]"><Hero /></div>
+            <div className="bg-[#FFF9F0]"><Hero onOpenWhitepaper={() => setShowWhitepaper(true)} /></div>
             <MarqueeBanner variant="gold" direction="rtl" icon="🐾" />
             <div className="bg-[#FFF3E8]"><About /></div>
             <MarqueeBanner variant="mint" direction="ltr" icon="🎬" />
@@ -390,7 +390,7 @@ export default function App() {
       </main>
 
       {/* Footer */}
-      <Footer />
+      <Footer onOpenWhitepaper={() => setShowWhitepaper(true)} />
 
       {/* Official Whitepaper PDF Viewer Modal */}
       <WhitepaperModal

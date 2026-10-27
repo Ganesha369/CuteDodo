@@ -86,11 +86,10 @@ export const Navbar: React.FC<NavbarProps> = ({
             </button>
 
             <a
-              href="#buy"
-              onClick={() => {
-                sounds.coin();
-                if (onOpenBuyModal) onOpenBuyModal();
-              }}
+              href="https://pump.fun/coin/2e5bKRHpAixvgE6zUdTf7rigxCq662zq7xvN8Dympump"
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={() => sounds.coin()}
               className="px-3 sm:px-5 py-1.5 sm:py-2.5 text-xs sm:text-sm font-bold font-heading text-[#49200B] bg-[#FFD36A] hover:bg-[#ffc947] border-2 border-[#49200B] rounded-2xl flex items-center gap-1 sm:gap-1.5 whitespace-nowrap shrink-0 shadow-[2px_2px_0px_#49200B] sm:shadow-[2.5px_2.5px_0px_#49200B] active:translate-x-0.5 active:translate-y-0.5 transition-all"
             >
               <Sparkles className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-[#49200B]" />

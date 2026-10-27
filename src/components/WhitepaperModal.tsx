@@ -33,7 +33,7 @@ const SECTIONS = [
   { page: 5, title: 'Tokenomics', label: '5 · Tokenomics' },
   { page: 6, title: 'Launch & Liquidity', label: '6 · PumpSwap' },
   { page: 7, title: 'Community', label: '7 · Community' },
-  { page: 8, title: '1% Pet Charity', label: '8 · Pet Charity' },
+  { page: 8, title: '1.15% Pet Charity', label: '8 · Pet Charity' },
   { page: 9, title: 'Our Pledges', label: '9 · Pledges' },
   { page: 10, title: '5-Phase Roadmap', label: '10 · Roadmap' },
   { page: 11, title: 'Security & Risks', label: '11 · Security Scan' },
@@ -41,7 +41,7 @@ const SECTIONS = [
 ];
 
 export const WhitepaperModal: React.FC<WhitepaperModalProps> = ({ isOpen, onClose }) => {
-  const pdfUrl = '/assets/aistudio/CuteDoDo-Whitepaper-v1.2-1_f0065eee.pdf';
+  const pdfUrl = '/assets/aistudio/CuteDoDo-Whitepaper-v1_2-updated_85c6c1de.pdf';
   const contractAddress = '2e5bKRHpAixvgE6zUdTf7rigxCq662zq7xvN8Dympump';
 
   const [currentPage, setCurrentPage] = useState<number>(1);

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Copy, Check, ExternalLink, ArrowRight, ShieldCheck, Heart, Sparkles, MousePointer } from 'lucide-react';
+import { Copy, Check, ExternalLink, ArrowRight, ShieldCheck, Heart, Sparkles, MousePointer, FileText } from 'lucide-react';
 import { sounds } from '../utils/soundEffects';
 import { ForestDriveScene } from './ForestDriveScene';
 import { GardenFamilyPlayScene } from './GardenFamilyPlayScene';
@@ -9,9 +9,10 @@ import { LiveMarketData } from './LiveMarketData';
 
 interface HeroProps {
   onOpenBuyModal?: () => void;
+  onOpenWhitepaper?: () => void;
 }
 
-export const Hero: React.FC<HeroProps> = ({ onOpenBuyModal }) => {
+export const Hero: React.FC<HeroProps> = ({ onOpenBuyModal, onOpenWhitepaper }) => {
   const [copied, setCopied] = useState(false);
   const [mascotMood, setMascotMood] = useState<'happy' | 'barking' | 'eating'>('happy');
   const [speechBubbleText, setSpeechBubbleText] = useState('Woof! Welcome to my pack! 🐾');
@@ -95,7 +96,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenBuyModal }) => {
             ⛓️ Built on Solana
           </span>
           <span className="flex items-center gap-1.5 px-2.5 sm:px-3 py-1 bg-[#FFD36A] border border-[#49200B]/30 rounded-xl shadow-[1.5px_1.5px_0px_#49200B]">
-            ❤️ 1% for pet shelters
+            ❤️ 1.15% for pet shelters
           </span>
         </div>
 
@@ -166,16 +167,32 @@ export const Hero: React.FC<HeroProps> = ({ onOpenBuyModal }) => {
             {/* Action Buttons */}
             <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-center lg:justify-start gap-2.5 sm:gap-4 mb-5 sm:mb-6">
               <a
-                href="#buy"
-                onClick={() => {
-                  sounds.coin();
-                  if (onOpenBuyModal) onOpenBuyModal();
-                }}
+                href="https://pump.fun/coin/2e5bKRHpAixvgE6zUdTf7rigxCq662zq7xvN8Dympump"
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={() => sounds.coin()}
                 className="w-full sm:w-auto px-4 py-2.5 sm:px-6 sm:py-3.5 bg-[#FFD36A] hover:bg-[#ffc947] text-[#49200B] font-heading text-sm sm:text-lg font-bold rounded-2xl flex items-center justify-center gap-2 border-2 border-[#49200B] shadow-[2.5px_2.5px_0px_#49200B] sm:shadow-[3.5px_3.5px_0px_#49200B] active:translate-x-0.5 active:translate-y-0.5 transition-all"
               >
                 <Sparkles className="w-4 h-4 sm:w-5 sm:h-5 text-[#49200B]" />
                 <span>Buy $DODO</span>
               </a>
+
+              <button
+                type="button"
+                onClick={() => {
+                  sounds.pop();
+                  if (onOpenWhitepaper) {
+                    onOpenWhitepaper();
+                  } else {
+                    window.open('/assets/aistudio/CuteDoDo-Whitepaper-v1_2-updated_85c6c1de.pdf', '_blank');
+                  }
+                }}
+                className="w-full sm:w-auto px-4 py-2.5 sm:px-6 sm:py-3.5 bg-[#FFF3E8] hover:bg-[#FFE3CE] text-[#49200B] font-heading text-sm sm:text-lg font-bold rounded-2xl flex items-center justify-center gap-2 border-2 border-[#49200B] shadow-[2.5px_2.5px_0px_#49200B] sm:shadow-[3.5px_3.5px_0px_#49200B] active:translate-x-0.5 active:translate-y-0.5 transition-all"
+                title="Read CuteDoDo Official Whitepaper v1.2"
+              >
+                <FileText className="w-4 h-4 sm:w-5 sm:h-5 text-[#FF9F00]" />
+                <span>Whitepaper</span>
+              </button>
 
               <a
                 href="#community"

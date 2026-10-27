@@ -6,6 +6,7 @@ interface WalletEntry {
   id: string;
   name: string;
   role: string;
+  percentage: string;
   address: string;
   type: 'charity' | 'dev' | 'guardian';
   note?: string;
@@ -21,7 +22,8 @@ export const PublicWallets: React.FC = () => {
     {
       id: 'dev-1',
       name: 'CuteDodo Dev Wallet',
-      role: '3.66% Core Operations & Dev',
+      role: 'Core Operations & Dev',
+      percentage: '3.66%',
       address: 'HRE98kgFUGGz6d6HqjW8wRV7dfKwyNSsvnJ8AaEK4bxJ',
       type: 'dev',
       note: 'Platform infrastructure, RPC endpoints, domain hosting, and open-source tooling.',
@@ -31,7 +33,8 @@ export const PublicWallets: React.FC = () => {
     {
       id: 'charity-1',
       name: 'DoDo Charity Wallet',
-      role: '1.15% Verified Charity & Impact Pool',
+      role: 'Verified Charity & Impact Pool',
+      percentage: '1.15%',
       address: 'ASNxk6W4NhkUtYwyqotmtLx4FzTcgNLhQEvN6mFcsAX4',
       type: 'charity',
       note: 'A public multi-sig charity wallet. Holders vote on shelters, every donation has Solscan receipts.',
@@ -40,19 +43,23 @@ export const PublicWallets: React.FC = () => {
     },
     {
       id: 'guardian-vv',
-      name: 'Gaurdian Wallet VV',
+      name: 'Guardian Wallet VV',
       role: 'Guardian Holding (Never Sell)',
+      percentage: '1.32%',
       address: '9zT8H3RQSBAQJn7e5rzQPpjo8YzqdEJZAgo6NgpCpkVT',
       type: 'guardian',
+      note: 'Long-term guardian holding from Chile pack member.',
       country: 'Chile',
       holder: 'VV',
     },
     {
       id: 'guardian-yg',
-      name: 'Gaurdian Wallet YG',
+      name: 'Guardian Wallet YG',
       role: 'Guardian Holding (Never Sell)',
+      percentage: '1.30%',
       address: 'GjrZkvj7Z88acevqiLbS8ex9zujnzmMyhwUjtKR4vJ2t',
       type: 'guardian',
+      note: 'Long-term guardian holding from Chile pack member.',
       country: 'Chile',
       holder: 'YG',
     },
@@ -60,35 +67,43 @@ export const PublicWallets: React.FC = () => {
       id: 'guardian-vara',
       name: 'Guardian Wallet VARA',
       role: 'Guardian Holding (Never Sell)',
+      percentage: '1.15%',
       address: 'Dii6GDaHpVENErgRUWPH6x8RATigGSPEQ8BECHh6JaZ1',
       type: 'guardian',
+      note: 'Long-term guardian holding from India pack member.',
       country: 'India',
       holder: 'VARA',
     },
     {
       id: 'guardian-knam',
-      name: 'Gaurdian Wallet KNAM',
+      name: 'Guardian Wallet KNAM',
       role: 'Guardian Holding (Never Sell)',
+      percentage: '1.10%',
       address: 'HkBkyjAMh8pjNxeuprRLSZJB15V4Ys3a8KpJgSXWuNbk',
       type: 'guardian',
+      note: 'Long-term guardian holding from Uruguay pack member.',
       country: 'Uruguay',
       holder: 'KNAM',
     },
     {
       id: 'guardian-grandma',
-      name: 'Gaurdian Wallet Grandma',
+      name: 'Guardian Wallet Grandma',
       role: 'Protected Family Holding',
+      percentage: '0.75%',
       address: '6tkzCuR7uyFC2wKbyTnac6XhDfQNNVdgybQExhhTH5Pk',
       type: 'guardian',
+      note: 'Founder’s grandmother holding—100% diamond hands for Dodo.',
       country: 'Chennai',
       holder: 'Grandma',
     },
     {
       id: 'guardian-rdy',
-      name: 'Gaurdian Wallet RDY',
+      name: 'Guardian Wallet RDY',
       role: 'Guardian Holding (Never Sell)',
+      percentage: '0.68%',
       address: '7amkfwmLJstZbkLKPepQ2eu6ywDt2HNtRF9YR8Nb2sVu',
       type: 'guardian',
+      note: 'Long-term guardian holding from London, UK pack member.',
       country: 'London, UK',
       holder: 'RDY',
     },
@@ -96,8 +111,10 @@ export const PublicWallets: React.FC = () => {
       id: 'guardian-vis',
       name: 'Guardian Wallet VIS',
       role: 'Guardian Holding (Never Sell)',
+      percentage: '0.56%',
       address: '3RU1K6AmNkoJV6Zjo49GYB5GqqidXVwkQN531Aj9chrH',
       type: 'guardian',
+      note: 'Long-term guardian holding from London, UK pack member.',
       country: 'London, UK',
       holder: 'VIS',
     },
@@ -105,44 +122,32 @@ export const PublicWallets: React.FC = () => {
       id: 'guardian-sel',
       name: 'Guardian Wallet SEL',
       role: 'Guardian Holding (Never Sell)',
+      percentage: '0.65%',
       address: '4sr95oeZDzYMYw6NWavMEzDaKR9Hz4J1UcQB42p9i1c3',
       type: 'guardian',
+      note: 'Long-term guardian holding from USA pack member.',
       country: 'USA',
       holder: 'SEL',
     },
     {
-      id: 'guardian-gan',
-      name: 'Guardian Wallet GAN',
+      id: 'guardian-kum',
+      name: 'Guardian Wallet KUM',
       role: 'Guardian Holding (Never Sell)',
-      address: 'Fsv6TgkPVSN4yKCPVNZEP3MAakjw46fR6YRaTf38rHC7',
-      type: 'guardian',
-      country: 'Bangalore India',
-      holder: 'GAN',
-    },
-    {
-      id: 'guardian-yas',
-      name: 'Gaurdian Wallet YAS',
-      role: 'Guardian Holding (Never Sell)',
-      address: '6V9HyFbYL1nve7T8VHamS3BD3pEu5AqzWBRFijy4FxLY',
-      type: 'guardian',
-      country: 'Bangalore India',
-      holder: 'YAS',
-    },
-    {
-      id: 'guardian-lak-1',
-      name: 'Guardian Wallet LAK',
-      role: 'Guardian Holding (Never Sell)',
-      address: '9B8bjouksxuKEqzm9ivW9Hthdtvj3QsUCv5U4N3LmM24',
-      type: 'guardian',
-      country: 'Guardian',
-      holder: 'LAK',
-    },
-    {
-      id: 'guardian-lak-2',
-      name: 'Guardian Wallet LAK',
-      role: 'Guardian Holding (Never Sell)',
+      percentage: '0.64%',
       address: 'EVQz1cT2MQoS7LVLmJkrKiurLaWQtGKtR1gYMzk45dya',
       type: 'guardian',
+      note: 'Long-term guardian holding, verified non-dumping reserve.',
+      country: 'Guardian',
+      holder: 'KUM',
+    },
+    {
+      id: 'guardian-lak',
+      name: 'Guardian Wallet LAK',
+      role: 'Guardian Holding (Never Sell)',
+      percentage: '0.60%',
+      address: '9B8bjouksxuKEqzm9ivW9Hthdtvj3QsUCv5U4N3LmM24',
+      type: 'guardian',
+      note: 'Long-term guardian holding, verified non-dumping reserve.',
       country: 'Guardian',
       holder: 'LAK',
     },
@@ -179,9 +184,9 @@ export const PublicWallets: React.FC = () => {
           {/* Filter tabs */}
           <div className="flex flex-wrap items-center justify-center gap-1.5 sm:gap-2 mt-4 sm:mt-6">
             {[
-              { id: 'all', label: 'All Wallets (14)' },
+              { id: 'all', label: 'All Wallets (12)' },
+              { id: 'guardian', label: '10 Guardian Wallets (8.75%)' },
               { id: 'charity', label: 'Charity (1.15% Pool)' },
-              { id: 'guardian', label: 'Guardian Wallets (8.75%)' },
               { id: 'dev', label: 'Dev Operations (3.66%)' },
             ].map((t) => (
               <button
@@ -220,12 +225,17 @@ export const PublicWallets: React.FC = () => {
                         {w.name}
                       </h3>
                       <div className="text-[10px] sm:text-[11px] font-bold text-[#FF9F00] leading-tight truncate">
-                        {w.role}
+                        {w.percentage} · {w.role}
                       </div>
                     </div>
-                    <span className="text-[10px] px-1.5 py-0.5 rounded-md border border-[#49200B]/30 bg-white font-bold font-heading text-[#49200B] shrink-0">
-                      {w.country}
-                    </span>
+                    <div className="flex flex-col items-end gap-1 shrink-0">
+                      <span className="text-[10px] px-2 py-0.5 rounded-md border border-[#49200B]/30 bg-[#FFD36A] font-extrabold font-mono text-[#49200B] shadow-[1px_1px_0px_#49200B]">
+                        {w.percentage}
+                      </span>
+                      <span className="text-[9px] px-1.5 py-0.5 rounded-md border border-[#49200B]/25 bg-white font-bold font-heading text-[#49200B]/80">
+                        {w.country}
+                      </span>
+                    </div>
                   </div>
 
                   {w.note && (
