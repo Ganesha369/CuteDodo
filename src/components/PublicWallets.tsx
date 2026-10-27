@@ -21,7 +21,7 @@ export const PublicWallets: React.FC = () => {
     {
       id: 'dev-1',
       name: 'CuteDodo Dev Wallet',
-      role: '3.0% Core Operations & Dev',
+      role: '3.66% Core Operations & Dev',
       address: 'HRE98kgFUGGz6d6HqjW8wRV7dfKwyNSsvnJ8AaEK4bxJ',
       type: 'dev',
       note: 'Platform infrastructure, RPC endpoints, domain hosting, and open-source tooling.',
@@ -31,7 +31,7 @@ export const PublicWallets: React.FC = () => {
     {
       id: 'charity-1',
       name: 'DoDo Charity Wallet',
-      role: '1.0% Verified Charity & Impact Pool',
+      role: '1.15% Verified Charity & Impact Pool',
       address: 'ASNxk6W4NhkUtYwyqotmtLx4FzTcgNLhQEvN6mFcsAX4',
       type: 'charity',
       note: 'A public multi-sig charity wallet. Holders vote on shelters, every donation has Solscan receipts.',
@@ -128,6 +128,24 @@ export const PublicWallets: React.FC = () => {
       country: 'Bangalore India',
       holder: 'YAS',
     },
+    {
+      id: 'guardian-lak-1',
+      name: 'Guardian Wallet LAK',
+      role: 'Guardian Holding (Never Sell)',
+      address: '9B8bjouksxuKEqzm9ivW9Hthdtvj3QsUCv5U4N3LmM24',
+      type: 'guardian',
+      country: 'Guardian',
+      holder: 'LAK',
+    },
+    {
+      id: 'guardian-lak-2',
+      name: 'Guardian Wallet LAK',
+      role: 'Guardian Holding (Never Sell)',
+      address: 'EVQz1cT2MQoS7LVLmJkrKiurLaWQtGKtR1gYMzk45dya',
+      type: 'guardian',
+      country: 'Guardian',
+      holder: 'LAK',
+    },
   ];
 
   const filteredWallets = wallets.filter((w) => {
@@ -155,16 +173,16 @@ export const PublicWallets: React.FC = () => {
             Public Wallets &amp; <span className="text-[#FF9F00]">Transparency</span>
           </h2>
           <p className="text-sm sm:text-base lg:text-lg text-[#79513B] font-medium leading-relaxed">
-            Every team and charity wallet, so you can check balances and transfers yourself. No hidden insider allocations.
+            Every team, guardian, and charity wallet, so you can check balances and transfers yourself. No hidden insider allocations.
           </p>
 
           {/* Filter tabs */}
           <div className="flex flex-wrap items-center justify-center gap-1.5 sm:gap-2 mt-4 sm:mt-6">
             {[
-              { id: 'all', label: 'All Wallets (12)' },
-              { id: 'charity', label: 'Charity (1.0% Pool)' },
-              { id: 'guardian', label: '10 Guardian Wallets (16.0%)' },
-              { id: 'dev', label: 'Dev Operations (3.0%)' },
+              { id: 'all', label: 'All Wallets (14)' },
+              { id: 'charity', label: 'Charity (1.15% Pool)' },
+              { id: 'guardian', label: 'Guardian Wallets (8.75%)' },
+              { id: 'dev', label: 'Dev Operations (3.66%)' },
             ].map((t) => (
               <button
                 key={t.id}
